@@ -1,0 +1,154 @@
+[
+  {
+    "id": 1,
+    "nom": "Sky 17",
+    "specialite": "Rooftop Dining & Lounge",
+    "adresse": "Hôtel Hilton Garden Inn, Place du Maghreb Arabe, Tangier",
+    "notation": 4.6,
+    "image": "https://scontent.frba2-2.fna.fbcdn.net/v/t39.30808-6/294940367_478329410958930_5883911196402097921_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=f1PbenAl5BMQ7kNvgFsyphA&_nc_zt=23&_nc_ht=scontent.frba2-2.fna&_nc_gid=AYeOPSBgj0wdG60pPKuVL0r&oh=00_AYA6Kni3ICiZy6QTmlv0YY7LfQdW4cDVuO31p4-q2N-NUQ&oe=67672A6E"
+  },
+  {
+    "id": 2,
+    "nom": "555 Famous Club & Restaurant",
+    "specialite": "Fine Dining & Nightlife",
+    "adresse": "Boulevard Mohamed VI, Tangier",
+    "notation": 4.5,
+    "image": "https://scontent.frba3-1.fna.fbcdn.net/v/t39.30808-6/368477592_693207902842122_4938476927039127521_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=WP3cF5FpuH4Q7kNvgF8Fuof&_nc_zt=23&_nc_ht=scontent.frba3-1.fna&_nc_gid=ATWin5UzauB5Q-PZSPaDoOe&oh=00_AYBver3F1gGj5NrxeIbHfoLajiBXlXZ_snDpRsjY0Ckahw&oe=6767450B"
+  },
+  {
+    "id": 3,
+    "nom": "Le Mirage",
+    "specialite": "Luxury Seafood",
+    "adresse": "Route de Cap Spartel, Tangier",
+    "notation": 4.8,
+    "image": "https://scontent.frba3-2.fna.fbcdn.net/v/t1.6435-9/71061500_2400517006826676_107908682490052608_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=3NWHt9y9iIsQ7kNvgF1JAqL&_nc_zt=23&_nc_ht=scontent.frba3-2.fna&_nc_gid=A1SGjbtUxT0LllzyZrW8DEY&oh=00_AYBm6qG82eWo6BgIuAfNhx3tPnJKNi5xQmEaSPZcM5_0fA&oe=6788F119"
+  },
+  {
+    "id": 4,
+    "nom": "El Morocco Club",
+    "specialite": "Mediterranean & Moroccan",
+    "adresse": "Place du Tabor, Kasbah, Tangier",
+    "notation": 4.7,
+    "image": "https://cdn-fnbga.nitrocdn.com/tAUlWYyReWTSQTSbTBayZSCXnamUPFKB/assets/images/optimized/rev-3568e79/www.purlife-maroc.com/wp-content/uploads/2022/02/El-Marocco-Club-Tanger-Pur-Life-Maroc-7.jpg"
+  },
+  {
+    "id": 5,
+    "nom": "Saveur de Poisson",
+    "specialite": "Authentic Moroccan Seafood",
+    "adresse": "Rue Amrah, Medina, Tangier",
+    "notation": 4.9,
+    "image": "https://media.cntraveler.com/photos/57eeb208964452525af6cc5a/16:9/w_1920,c_limit/Storefront-LeSaveurduPoisson-TangierMarrakech-CRRestaurant.jpg"
+  },
+  {
+    "id": 6,
+    "nom": "Anna & Paolo",
+    "specialite": "Italian Cuisine",
+    "adresse": "Quartier Malabata, Tangier",
+    "notation": 4.6,
+    "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/90/29/0a/photo3jpg.jpg?w=900&h=500&s=1"
+  },
+  {
+    "id": 7,
+    "nom": "Restaurant Ahlen",
+    "specialite": "Traditional Moroccan Cuisine",
+    "adresse": "Rue Mexique, Medina, Tangier",
+    "notation": 4.3,
+    "image": "https://scontent.frba3-1.fna.fbcdn.net/v/t1.6435-9/84474124_3003980502946838_4914071567404630016_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=V7r6DpQaZ5cQ7kNvgEaLSHN&_nc_zt=23&_nc_ht=scontent.frba3-1.fna&_nc_gid=AL3tm42e0B3tGMgp8Xmk8bh&oh=00_AYDo-vy_T1clhNaI_mgWm8oHCaBxWT7ICPnNE55iu0HgjQ&oe=6788FC88"
+  },
+  {
+    "id": 8,
+    "nom": "El Tangerino",
+    "specialite": "Spanish Tapas & Seafood",
+    "adresse": "Boulevard Mohamed VI, Tangier",
+    "notation": 4.4,
+    "image": "https://teratlas.ma/wp-content/uploads/2023/12/ff38b43079494ae79adae3b5ad347f4e.jpg"
+  },
+  {
+    "id": 9,
+    "nom": "Chez Abdou",
+    "specialite": "Seafood",
+    "adresse": "Cap Malabata, Tangier",
+    "notation": 4.2,
+    "image": "https://www.tanger-experience.com/wp-content/uploads/2022/11/abdou-le-lieu-750.jpg"
+  },
+  {
+    "id": 10,
+    "nom": "Le Nabab",
+    "specialite": "Moroccan Fine Dining",
+    "adresse": "Place de la Kasbah, Tangier",
+    "notation": 4.5,
+    "image": "https://img.restaurantguru.com/c2ed-Le-Nabab-Tangier-view.jpg"
+  },
+  {
+    "id": 11,
+    "nom": "Cappuccino",
+    "specialite": "Coffee & Desserts",
+    "adresse": "Malabata, Tangier",
+    "notation": 4.5,
+    "image": "https://scontent.frba2-1.fna.fbcdn.net/v/t39.30808-6/306988011_389355060080172_7268438289662425377_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=105&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=Twl6jydp1A4Q7kNvgFDnE89&_nc_zt=23&_nc_ht=scontent.frba2-1.fna&_nc_gid=AOcT1TssG6cxel2BcmrpMir&oh=00_AYCl_8R9AYEUpdJSoKew4eLCf-MIaOo9KTkHQUYbr9uEWg&oe=6767453F"
+  },
+  {
+    "id": 12,
+    "nom": "Café Hafa",
+    "specialite": "Mint Tea & Snacks",
+    "adresse": "Quartier Marshan, Tangier",
+    "notation": 4.3,
+    "image": "https://www.tanger-experience.com/wp-content/uploads/2023/04/whahington-Poste-Cafe-Hafa-7541-750x350.jpg"
+  },
+  {
+    "id": 13,
+    "nom": "RR-Ice",
+    "specialite": "Ice Cream & Coffee",
+    "adresse": "Corniche de Tanger, Tangier",
+    "notation": 4.4,
+    "image": "https://pbs.twimg.com/media/Ea3ttG2XQAA6TW0?format=jpg&name=small"
+  },
+  {
+    "id": 14,
+    "nom": "Villa Josephine",
+    "specialite": "Afternoon Tea",
+    "adresse": "Mountain of Tangier",
+    "notation": 4.7,
+    "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/e7/5b/57/caption.jpg?w=1200&h=-1&s=1"
+  },
+  {
+    "id": 15,
+    "nom": "Café Paris",
+    "specialite": "Classic Café",
+    "adresse": "Place de France, Tangier",
+    "notation": 4.1,
+    "image": "https://www.nomadicbackpacker.com/uploads/9/9/5/9/9959097/le-gran-cafe-de-paris-tangiers-morocco_1.jpg"
+  },
+  {
+    "id": 16,
+    "nom": "Chicha Lounge",
+    "specialite": "Shisha & Drinks",
+    "adresse": "Corniche de Tanger, Tangier",
+    "notation": 4,
+    "image": "https://expatnights.com/uae/wp-content/uploads/2015/01/Nargile-Shisha-Lounge-640x379.jpg"
+  },
+  {
+    "id": 17,
+    "nom": "La Véranda",
+    "specialite": "International Cuisine",
+    "adresse": "Rue de la Plage, Tangier",
+    "notation": 4.4,
+    "image": "https://lh3.googleusercontent.com/p/AF1QipOOL-QP1_0Uz0hHtajytCoRLO_EJKf1A1hMQH0S=s680-w680-h510"
+  },
+  {
+    "id": 19,
+    "nom": "Café Tangerina",
+    "specialite": "Coffee & Snacks",
+    "adresse": "Kasbah, Tangier",
+    "notation": 4.2,
+    "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/d6/2e/d0/cafe-tingis.jpg?w=900&h=500&s=1"
+  },
+  {
+    "id": 20,
+    "nom": "Dar Nour",
+    "specialite": "Moroccan & Mediterranean",
+    "adresse": "Kasbah, Tangier",
+    "notation": 4.6,
+    "image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/507434372.jpg?k=8914e05c8ff0f9997f508c07fcb9f4417afb86a07e0d490cbe3daed20e949a61&o=&hp=1"
+  }
+]
