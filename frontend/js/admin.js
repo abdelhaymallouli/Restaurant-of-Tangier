@@ -1,4 +1,4 @@
-const apiURL = "http://localhost:3000/api/restaurants";
+const apiURL = "http://localhost:3000/restaurants";
 
 // Fetch and display all restaurants
 async function fetchRestaurantsAdmin() {

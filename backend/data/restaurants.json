@@ -5,6 +5,8 @@
     "specialite": "Rooftop Dining & Lounge",
     "adresse": "Hôtel Hilton Garden Inn, Place du Maghreb Arabe, Tangier",
     "notation": 4.6,
+    "Phone": "+212 5393-23100",
+    "Email": "sky17@fiouis.com",
     "image": "https://scontent.frba2-2.fna.fbcdn.net/v/t39.30808-6/294940367_478329410958930_5883911196402097921_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=f1PbenAl5BMQ7kNvgFsyphA&_nc_zt=23&_nc_ht=scontent.frba2-2.fna&_nc_gid=AYeOPSBgj0wdG60pPKuVL0r&oh=00_AYA6Kni3ICiZy6QTmlv0YY7LfQdW4cDVuO31p4-q2N-NUQ&oe=67672A6E"
   },
   {
@@ -13,6 +15,8 @@
     "specialite": "Fine Dining & Nightlife",
     "adresse": "Boulevard Mohamed VI, Tangier",
     "notation": 4.5,
+    "Phone": "+212 615 885 287",
+    "Email": "contact@555tanger.com",
     "image": "https://scontent.frba3-1.fna.fbcdn.net/v/t39.30808-6/368477592_693207902842122_4938476927039127521_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=WP3cF5FpuH4Q7kNvgF8Fuof&_nc_zt=23&_nc_ht=scontent.frba3-1.fna&_nc_gid=ATWin5UzauB5Q-PZSPaDoOe&oh=00_AYBver3F1gGj5NrxeIbHfoLajiBXlXZ_snDpRsjY0Ckahw&oe=6767450B"
   },
   {
@@ -21,6 +25,8 @@
     "specialite": "Luxury Seafood",
     "adresse": "Route de Cap Spartel, Tangier",
     "notation": 4.8,
+    "Phone": "+212 5393-12345",
+    "Email": "info@lemirage.ma",
     "image": "https://scontent.frba3-2.fna.fbcdn.net/v/t1.6435-9/71061500_2400517006826676_107908682490052608_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=3NWHt9y9iIsQ7kNvgF1JAqL&_nc_zt=23&_nc_ht=scontent.frba3-2.fna&_nc_gid=A1SGjbtUxT0LllzyZrW8DEY&oh=00_AYBm6qG82eWo6BgIuAfNhx3tPnJKNi5xQmEaSPZcM5_0fA&oe=6788F119"
   },
   {
@@ -29,6 +35,8 @@
     "specialite": "Mediterranean & Moroccan",
     "adresse": "Place du Tabor, Kasbah, Tangier",
     "notation": 4.7,
+    "Phone": "+212 5393-67890",
+    "Email": "contact@elmoroccoclub.com",
     "image": "https://cdn-fnbga.nitrocdn.com/tAUlWYyReWTSQTSbTBayZSCXnamUPFKB/assets/images/optimized/rev-3568e79/www.purlife-maroc.com/wp-content/uploads/2022/02/El-Marocco-Club-Tanger-Pur-Life-Maroc-7.jpg"
   },
   {
@@ -37,6 +45,8 @@
     "specialite": "Authentic Moroccan Seafood",
     "adresse": "Rue Amrah, Medina, Tangier",
     "notation": 4.9,
+    "Phone": "+212 5393-23456",
+    "Email": "saveurpoisson@ma",
     "image": "https://media.cntraveler.com/photos/57eeb208964452525af6cc5a/16:9/w_1920,c_limit/Storefront-LeSaveurduPoisson-TangierMarrakech-CRRestaurant.jpg"
   },
   {
@@ -45,6 +55,8 @@
     "specialite": "Italian Cuisine",
     "adresse": "Quartier Malabata, Tangier",
     "notation": 4.6,
+    "Phone": "+212 5393-34567",
+    "Email": "anna.paolo@ma",
     "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/90/29/0a/photo3jpg.jpg?w=900&h=500&s=1"
   },
   {
@@ -53,6 +65,8 @@
     "specialite": "Traditional Moroccan Cuisine",
     "adresse": "Rue Mexique, Medina, Tangier",
     "notation": 4.3,
+    "Phone": "+212 5393-45678",
+    "Email": "ahlen@ma",
     "image": "https://scontent.frba3-1.fna.fbcdn.net/v/t1.6435-9/84474124_3003980502946838_4914071567404630016_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=V7r6DpQaZ5cQ7kNvgEaLSHN&_nc_zt=23&_nc_ht=scontent.frba3-1.fna&_nc_gid=AL3tm42e0B3tGMgp8Xmk8bh&oh=00_AYDo-vy_T1clhNaI_mgWm8oHCaBxWT7ICPnNE55iu0HgjQ&oe=6788FC88"
   },
   {
@@ -61,15 +75,9 @@
     "specialite": "Spanish Tapas & Seafood",
     "adresse": "Boulevard Mohamed VI, Tangier",
     "notation": 4.4,
+    "Phone": "+212 5393-56789",
+    "Email": "contact@eltangerino.com",
     "image": "https://teratlas.ma/wp-content/uploads/2023/12/ff38b43079494ae79adae3b5ad347f4e.jpg"
-  },
-  {
-    "id": 9,
-    "nom": "Chez Abdou",
-    "specialite": "Seafood",
-    "adresse": "Cap Malabata, Tangier",
-    "notation": 4.2,
-    "image": "https://www.tanger-experience.com/wp-content/uploads/2022/11/abdou-le-lieu-750.jpg"
   },
   {
     "id": 10,
@@ -77,6 +85,8 @@
     "specialite": "Moroccan Fine Dining",
     "adresse": "Place de la Kasbah, Tangier",
     "notation": 4.5,
+    "Phone": "+212 5393-67890",
+    "Email": "contact@lenabab.com",
     "image": "https://img.restaurantguru.com/c2ed-Le-Nabab-Tangier-view.jpg"
   },
   {
@@ -85,6 +95,8 @@
     "specialite": "Coffee & Desserts",
     "adresse": "Malabata, Tangier",
     "notation": 4.5,
+    "Phone": "+212 5393-78901",
+    "Email": "cappuccino@ma",
     "image": "https://scontent.frba2-1.fna.fbcdn.net/v/t39.30808-6/306988011_389355060080172_7268438289662425377_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=105&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=Twl6jydp1A4Q7kNvgFDnE89&_nc_zt=23&_nc_ht=scontent.frba2-1.fna&_nc_gid=AOcT1TssG6cxel2BcmrpMir&oh=00_AYCl_8R9AYEUpdJSoKew4eLCf-MIaOo9KTkHQUYbr9uEWg&oe=6767453F"
   },
   {
@@ -93,6 +105,8 @@
     "specialite": "Mint Tea & Snacks",
     "adresse": "Quartier Marshan, Tangier",
     "notation": 4.3,
+    "Phone": "+212 5393-89012",
+    "Email": "info@cafehafa.com",
     "image": "https://www.tanger-experience.com/wp-content/uploads/2023/04/whahington-Poste-Cafe-Hafa-7541-750x350.jpg"
   },
   {
@@ -101,6 +115,8 @@
     "specialite": "Ice Cream & Coffee",
     "adresse": "Corniche de Tanger, Tangier",
     "notation": 4.4,
+    "Phone": "+212 5393-90123",
+    "Email": "rrice@ma",
     "image": "https://pbs.twimg.com/media/Ea3ttG2XQAA6TW0?format=jpg&name=small"
   },
   {
@@ -109,6 +125,8 @@
     "specialite": "Afternoon Tea",
     "adresse": "Mountain of Tangier",
     "notation": 4.7,
+    "Phone": "+212 5393-12345",
+    "Email": "villa_josephine@ma",
     "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/e7/5b/57/caption.jpg?w=1200&h=-1&s=1"
   },
   {
@@ -117,6 +135,8 @@
     "specialite": "Classic Café",
     "adresse": "Place de France, Tangier",
     "notation": 4.1,
+    "Phone": "+212 5393-23456",
+    "Email": "cafeparis@ma",
     "image": "https://www.nomadicbackpacker.com/uploads/9/9/5/9/9959097/le-gran-cafe-de-paris-tangiers-morocco_1.jpg"
   },
   {
@@ -125,6 +145,8 @@
     "specialite": "Shisha & Drinks",
     "adresse": "Corniche de Tanger, Tangier",
     "notation": 4,
+    "Phone": "+212 5393-34567",
+    "Email": "chichalounge@ma",
     "image": "https://expatnights.com/uae/wp-content/uploads/2015/01/Nargile-Shisha-Lounge-640x379.jpg"
   },
   {
@@ -133,7 +155,19 @@
     "specialite": "International Cuisine",
     "adresse": "Rue de la Plage, Tangier",
     "notation": 4.4,
+    "Phone": "+212 5393-45678",
+    "Email": "verandalounge@ma",
     "image": "https://lh3.googleusercontent.com/p/AF1QipOOL-QP1_0Uz0hHtajytCoRLO_EJKf1A1hMQH0S=s680-w680-h510"
+  },
+  {
+    "id": 18,
+    "nom": "Barcelo Café",
+    "specialite": "Coffee & Pastries",
+    "adresse": "Hôtel Barcelo, Tangier",
+    "notation": 4.3,
+    "Phone": "+212 5393-56789",
+    "Email": "barcelocafe@ma",
+    "image": "https://cdn-fnbga.nitrocdn.com/tAUlWYyReWTSQTSbTBayZSCXnamUPFKB/assets/images/optimized/rev-3568e79/www.purlife-maroc.com/wp-content/uploads/2024/02/Pure-Life-Maroc-Barcelo-Tanger-1000x1000-3-21-800x480.jpg"
   },
   {
     "id": 19,
@@ -141,6 +175,8 @@
     "specialite": "Coffee & Snacks",
     "adresse": "Kasbah, Tangier",
     "notation": 4.2,
+    "Phone": "+212 5393-67890",
+    "Email": "cafe.tangerina@ma",
     "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/d6/2e/d0/cafe-tingis.jpg?w=900&h=500&s=1"
   },
   {
@@ -149,6 +185,8 @@
     "specialite": "Moroccan & Mediterranean",
     "adresse": "Kasbah, Tangier",
     "notation": 4.6,
+    "Phone": "+212 5393-78901",
+    "Email": "dar.nour@ma",
     "image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/507434372.jpg?k=8914e05c8ff0f9997f508c07fcb9f4417afb86a07e0d490cbe3daed20e949a61&o=&hp=1"
   }
 ]
