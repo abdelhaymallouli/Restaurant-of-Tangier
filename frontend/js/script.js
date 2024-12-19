@@ -14,7 +14,7 @@ if (window.location.pathname.endsWith("restaurant.html")) {
       if (restaurant) {
         renderRestaurantDetails(restaurant);
       } else {
-        document.getElementById("restaurantDetails").innerHTML = "<p>Restaurant not found.</p>";
+        document.getElementById("restaurant-info").innerHTML = "<p>Restaurant not found.</p>";
       }
     } catch (error) {
       console.error("Error fetching restaurant details:", error);
@@ -24,49 +24,60 @@ if (window.location.pathname.endsWith("restaurant.html")) {
   function renderRestaurantDetails(restaurant) {
     const restaurantContainer = document.getElementById("restaurant-info");
     restaurantContainer.innerHTML = `
-<div class="restaurant-content">
-  <img 
-    src="${restaurant.image}" 
-    alt="Image of ${restaurant.nom}" 
-    class="restaurant-image">
-  <section class="restaurant-details">
-    <h1 class="restaurant-title">${restaurant.nom}</h1>
-    <dl>
-      <dt><strong>Speciality:</strong></dt>
-      <dd>${restaurant.specialite}</dd>
-      <dt><strong>Address:</strong></dt>
-      <dd>${restaurant.adresse}</dd>
-    </dl>
-    <div class="rating">
-      <p><strong>Rating:</strong></p>
-      ${createStarRating(restaurant.notation)}
-      <span class="rating-star">${restaurant.notation}</span>
-    </div>
-    <div class="contact-option">
-      <h3>Contact</h3>
-      <dl>
-        <dt><strong>Phone:</strong></dt>
-        <dd>${restaurant.Phone}</dd>
-        <dt><strong>Email:</strong></dt>
-        <dd>${restaurant.Email}</dd>
-      </dl>
-    </div>
-  </section>
-</div>
-
+      <div class="restaurant-content">
+        <img 
+          src="${restaurant.image}" 
+          alt="Image of ${restaurant.nom}" 
+          class="restaurant-image">
+        <section class="restaurant-details">
+          <h1 class="restaurant-title">${restaurant.nom}</h1>
+          <dl>
+            <dt><strong>Speciality:</strong></dt>
+            <dd>${restaurant.specialite}</dd>
+            <dt><strong>Address:</strong></dt>
+            <dd>${restaurant.adresse}</dd>
+          </dl>
+          <div class="rating">
+            <p><strong>Rating:</strong></p>
+            ${createStarRating(restaurant.notation)}
+            <span class="rating-star">${restaurant.notation}</span>
+          </div>
+          <div class="contact-option">
+            <h3>Contact</h3>
+            <dl>
+              <dt><strong>Phone:</strong></dt>
+              <dd>${restaurant.Phone}</dd>
+              <dt><strong>Email:</strong></dt>
+              <dd>${restaurant.Email}</dd>
+            </dl>
+          </div>
+        </section>
+      </div>
     `;
   }
   // Fetch and render restaurant details on page load
   fetchRestaurantDetails();
   
 } else {
+
   // Code for the main index.html page
   async function fetchRestaurants() {
     try {
+      const urlParams = new URLSearchParams(window.location.search);
+      const searchTerm = urlParams.get("search")?.toLowerCase() || "";
+
       const response = await fetch("http://localhost:3000/restaurants");
       const data = await response.json();
-      console.log("Fetched data:", data);
-      renderRestaurants(data);
+
+      if (searchTerm) {
+        const filtered = data.filter(r =>
+          r.nom.toLowerCase().includes(searchTerm) ||
+          r.specialite.toLowerCase().includes(searchTerm)
+        );
+        renderRestaurants(filtered);
+      } else {
+        renderRestaurants(data);
+      }
     } catch (error) {
       console.error("Error fetching restaurants:", error);
     }
@@ -93,33 +104,41 @@ if (window.location.pathname.endsWith("restaurant.html")) {
         `;
         container.appendChild(div);
     });
-}
-// search function 
-function searchRestaurants() {
-  const searchTerm = document.getElementById("search").value.toLowerCase();
-  fetch("http://localhost:3000/restaurants")
-    .then(response => response.json())
-    .then(data => {
-      const filtered = data.filter(r =>
-        r.nom.toLowerCase().includes(searchTerm) || 
-        r.specialite.toLowerCase().includes(searchTerm)
-      );
-      renderRestaurants(filtered);
-    })
-    .catch(error => console.error("Search Error:", error));
-}
+  }
 
-document.getElementById("searchButton").addEventListener("click", searchRestaurants);
-document.getElementById("clearButton").addEventListener("click", () => {
-  document.getElementById("search").value = "";
+  function searchRestaurants() {
+    const searchTerm = document.getElementById("search").value.toLowerCase();
+
+    // Redirect to index.html with the search term as a query parameter
+    if (!window.location.pathname.endsWith("index.html")) {
+      window.location.href = `index.html?search=${encodeURIComponent(searchTerm)}`;
+      return;
+    }
+
+    // Fetch and filter restaurants on the homepage
+    fetch("http://localhost:3000/restaurants")
+      .then(response => response.json())
+      .then(data => {
+        const filtered = data.filter(r =>
+          r.nom.toLowerCase().includes(searchTerm) || 
+          r.specialite.toLowerCase().includes(searchTerm)
+        );
+        renderRestaurants(filtered);
+      })
+      .catch(error => console.error("Search Error:", error));
+  }
+
+  document.getElementById("searchButton").addEventListener("click", searchRestaurants);
+  document.getElementById("clearButton").addEventListener("click", () => {
+    document.getElementById("search").value = "";
+    fetchRestaurants();
+  });
+
+  // Initial fetch to populate the list
   fetchRestaurants();
-});
-
-
-// Initial fetch to populate the list
-fetchRestaurants();
 }
 
+// Rating function 
 function createStarRating(note) {
   const filledWidth = (note / 5) * 100; // Pourcentage d'étoiles pleines
   return `
@@ -128,4 +147,3 @@ function createStarRating(note) {
     </div>
   `;
 }
-
