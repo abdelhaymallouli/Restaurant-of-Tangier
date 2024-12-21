@@ -1,74 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore the best restaurants in Tangier with detailed guides and reviews.">
-  <title>Restaurant Details</title>
-  <link rel="icon" href="./img/tan-removebg-preview.png" type="image/x-icon">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
-  <header class="restaurant-header" role="banner">
-    <div class="logo">
-      <a href="/frontend/">
-        <img src="./img/tan__1_-removebg-preview.png" alt="Restaurant Logo">
-      </a>
-    </div>
-    <div class="search-container">
-      <input
-        type="text"
-        id="search"
-        class="search-input" 
-        placeholder="Search restaurants in Tangier"
-        aria-label="Enter restaurant name or specialty"
-      >
-      <button id="searchButton" aria-label="Search restaurants">Search</button>
-      <button id="clearButton" aria-label="Clear search input">Clear</button>
-    </div>
-  </header>
-  <h1 class="res-title">Restaurant Details :</h1>
-  <main id="restaurant-info" class="info-container">
-    <!-- Restaurant details will be dynamically rendered here -->
-  </main>
-  <footer class="site-footer">
-    <div class="footer-content">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explore the best restaurants in Tangier with detailed guides and reviews."
+    />
+    <title>Restaurant Details</title>
+    <link
+      rel="icon"
+      href="./img/tan-removebg-preview.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="restaurant-header" role="banner">
+      <div class="logo">
+        <a href="/frontend/">
+          <img src="./img/tan__1_-removebg-preview.png" alt="Restaurant Logo" />
+        </a>
+      </div>
+      <nav>
+        <a href="/frontend/">Home</a>
+        <a href="/frontend/restaurants.html">Restaurants</a>
+        <a href="/frontend/#city-tour">City Tour</a>
+        <a href="">About</a>
+        <a href="#footer">Contact us</a>
+      </nav>
+      <div class="search-container">
+        <input
+          type="text"
+          id="search"
+          class="search-input"
+          placeholder="Search restaurants in Tangier"
+          aria-label="Enter restaurant name or specialty"
+        />
+        <button id="searchButton" aria-label="Search restaurants">
+          Search
+        </button>
+        <button id="clearButton" aria-label="Clear search input">Clear</button>
+      </div>
+    </header>
+
+
+    <main id="restaurant-info" class="info-container">
+      <!-- Restaurant details will be dynamically rendered here -->
+    </main>
+    <footer id="footer" class="site-footer">
+      <div class="footer-content">
         <div class="footer-section about">
-              <img src="./img/tan__1_-removebg-preview.png" alt="">
-            <p>Travel beyond your <br>
-              imagination, with our <br>
-              Travel Agency!</p>
+          <img src="./img/tan__1_-removebg-preview.png" alt="" />
+          <p>
+            Travel beyond your <br />
+            imagination, with our <br />
+            Travel Agency!
+          </p>
         </div>
         <div class="footer-section contact">
-            <h3>Contact Us</h3>
-            <p><i class="fas fa-map-marker-alt"></i> Tangier, Morocco</p>
-            <p><i class="fas fa-envelope"></i> info@tangierrestaurants.com</p>
-            <p><i class="fas fa-phone"></i> +212 5XX XX XX XX</p>
+          <h3>Contact Us</h3>
+          <p><i class="fas fa-map-marker-alt"></i> Tangier, Morocco</p>
+          <p><i class="fas fa-envelope"></i> info@tangierrestaurants.com</p>
+          <p><i class="fas fa-phone"></i> +212 5XX XX XX XX</p>
         </div>
         <div class="footer-section social">
-            <h3>Follow Us</h3>
-            <div class="social-icons">
-                <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-            </div>
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+          </div>
         </div>
-    </div>
-    <div class="footer-bottom">
-        <p>&copy; <span id="year"></span> Tangier Restaurant Guide. All Rights Reserved.</p>
-  <script>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; <span id="year"></span> Tangier Restaurant Guide. All Rights
+          Reserved.
+        </p>
+        <script>
+          document.getElementById("year").textContent =
+            new Date().getFullYear();
+        </script>
+      </div>
+    </footer>
+    <script>
       document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-  
-    </div>
-  </footer>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-  <script src="js/details.js"></script>
-</body>
+    </script>
+    <script src="js/details.js"></script>
+  </body>
 </html>

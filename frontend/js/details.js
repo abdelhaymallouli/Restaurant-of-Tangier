@@ -21,35 +21,38 @@ async function fetchRestaurantDetails() {
 function renderRestaurantDetails(restaurant) {
   const restaurantContainer = document.getElementById("restaurant-info");
   restaurantContainer.innerHTML = `
-    <div class="restaurant-content">
-      <img 
-        src="${restaurant.image}" 
-        alt="Image of ${restaurant.nom}" 
-        class="restaurant-image">
-      <section class="restaurant-details">
-        <h1 class="restaurant-title">${restaurant.nom}</h1>
-        <dl>
-          <dt><strong>Speciality:</strong></dt>
-          <dd>${restaurant.specialite}</dd>
-          <dt><strong>Address:</strong></dt>
-          <dd>${restaurant.adresse}</dd>
-        </dl>
-        <div class="rating">
-          <p><strong>Rating:</strong></p>
-          ${createStarRating(restaurant.notation)}
-          <span class="rating-star">${restaurant.notation}</span>
-        </div>
-        <div class="contact-option">
-          <h3>Contact</h3>
-          <dl>
-            <dt><strong>Phone:</strong></dt>
-            <dd>${restaurant.Phone}</dd>
-            <dt><strong>Email:</strong></dt>
-            <dd>${restaurant.Email}</dd>
-          </dl>
-        </div>
-      </section>
+<div class="restaurant-content">
+  <img 
+    src="${restaurant.image}" 
+    alt="Image of ${restaurant.nom}" 
+    class="restaurant-image">
+  <section class="restaurant-info">
+    <h2>${restaurant.nom}</h2>
+    <p><img src="./img/location.svg" alt=""> ${restaurant.adresse}</p>
+    <p>Specialite : ${restaurant.specialite}</p>
+    <div class="rating-details">
+      Rating : ${createStarRating(restaurant.notation)}
+      <span class="rating-star">${restaurant.notation}</span>
     </div>
+    <div class="contact-section">
+      <h3>Contact:</h3>
+      <p>Phone : ${restaurant.Phone}</p>
+      <p>Email : ${restaurant.Email}</p>
+    </div>
+  </section>
+</div>
+    <section class="location-section">
+    <h3>Our Map:</h3>
+    <iframe 
+      src="${restaurant.map}" 
+      width="100%" 
+      height="400" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </section>
   `;
 }
 
@@ -57,7 +60,7 @@ function createStarRating(note) {
   const filledWidth = (note / 5) * 100;
   return `
     <div class="stars">
-      <div class="filled" style="width: ${filledWidth}%;">★★★★★</div>
+      <div class="filled" style="width: ${filledWidth}%;"> ★★★★★</div>
     </div>
   `;
 }
