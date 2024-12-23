@@ -11,6 +11,7 @@
     <h1>Admin Dashboard</h1>
   </header>
   <main>
+    <!-- Add Restaurant Section -->
     <section id="addRestaurant">
       <h2>Add New Restaurant</h2>
       <form id="addForm">
@@ -18,11 +19,15 @@
         <input type="text" id="addSpecialite" placeholder="Speciality" required>
         <input type="text" id="addAdresse" placeholder="Address" required>
         <input type="number" id="addNotation" placeholder="Rating (1-5)" min="1" max="5" required>
+        <input type="text" id="addPhone" placeholder="Phone Number" required>
+        <input type="email" id="addEmail" placeholder="Email Address" required>
+        <input type="url" id="addMap" placeholder="Google Maps URL" required>
         <input type="url" id="addImage" placeholder="Image URL" required>
         <button type="submit">Add Restaurant</button>
       </form>
     </section>
 
+    <!-- Search Restaurant Section -->
     <section id="searchRestaurant">
       <h2>Search Restaurants</h2>
       <input type="text" id="searchQuery" placeholder="Search by name or speciality">
@@ -30,6 +35,7 @@
       <button id="clearSearchButton">Clear</button>
     </section>
 
+    <!-- Restaurant List Section -->
     <section id="restaurantList">
       <h2>Restaurant List</h2>
       <div id="restaurantContainer"></div>

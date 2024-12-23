@@ -25,7 +25,11 @@ function renderRestaurantListAdmin(restaurants) {
         <h3>${restaurant.nom}</h3>
         <p><strong>Speciality:</strong> ${restaurant.specialite}</p>
         <p><strong>Address:</strong> ${restaurant.adresse}</p>
+        <p><strong>Phone:</strong> ${restaurant.phone}</p>
+        <p><strong>Email:</strong> <a href="mailto:${restaurant.email}">${restaurant.email}</a></p>
+        <p><strong>Map:</strong> <a href="${restaurant.map}" target="_blank">View Location</a></p>
         <p><strong>Rating:</strong> ${restaurant.notation}</p>
+        <p><strong>Image:</strong> <img src="${restaurant.image}" alt="${restaurant.nom}" width="100"></p>
         <button onclick="deleteRestaurant(${restaurant.id})">Delete</button>
         <button onclick="editRestaurant(${restaurant.id})">Edit</button>
       </div>
@@ -43,6 +47,9 @@ document.getElementById("addForm").addEventListener("submit", async (e) => {
     specialite: document.getElementById("addSpecialite").value.trim(),
     adresse: document.getElementById("addAdresse").value.trim(),
     notation: parseFloat(document.getElementById("addNotation").value.trim()),
+    phone: document.getElementById("addPhone").value.trim(),
+    email: document.getElementById("addEmail").value.trim(),
+    map: document.getElementById("addMap").value.trim(),
     image: document.getElementById("addImage").value.trim(),
   };
 
@@ -52,13 +59,11 @@ document.getElementById("addForm").addEventListener("submit", async (e) => {
     !newRestaurant.specialite ||
     !newRestaurant.adresse ||
     isNaN(newRestaurant.notation) || newRestaurant.notation < 1 || newRestaurant.notation > 5 ||
-    !newRestaurant.image
+    !newRestaurant.phone || !newRestaurant.email || !newRestaurant.map || !newRestaurant.image
   ) {
     alert("Please fill all fields correctly.");
     return;
   }
-
-  console.log("Sending data:", JSON.stringify(newRestaurant));
 
   try {
     const response = await fetch(apiURL, {
@@ -96,21 +101,31 @@ async function deleteRestaurant(id) {
 
 // Edit a restaurant
 async function editRestaurant(id) {
-  const newName = prompt("Enter new name:").trim();
-  const newSpeciality = prompt("Enter new speciality:").trim();
-  const newAddress = prompt("Enter new address:").trim();
-  const newRating = prompt("Enter new rating (1-5):").trim();
-  const newImage = prompt("Enter new image URL:").trim();
+  const newName = prompt("Enter new name:")?.trim();
+  const newCuisine = prompt("Enter new cuisine:")?.trim();
+  const newAddress = prompt("Enter new address:")?.trim();
+  const newPhone = prompt("Enter new phone number:")?.trim();
+  const newEmail = prompt("Enter new email address:")?.trim();
+  const newMap = prompt("Enter new map URL:")?.trim();
+  const newRating = prompt("Enter new rating (1-5):")?.trim();
+  const newImage = prompt("Enter new image URL:")?.trim();
 
-  if (!newName || !newSpeciality || !newAddress || isNaN(newRating) || newRating < 1 || newRating > 5 || !newImage) {
+  // Validate inputs
+  if (
+    !newName || !newCuisine || !newAddress || !newPhone || !newEmail || !newMap ||
+    isNaN(newRating) || newRating < 1 || newRating > 5 || !newImage
+  ) {
     alert("Please fill all fields correctly.");
     return;
   }
 
   const updatedRestaurant = {
     nom: newName,
-    specialite: newSpeciality,
+    specialite: newCuisine,
     adresse: newAddress,
+    phone: newPhone,
+    email: newEmail,
+    map: newMap,
     notation: parseFloat(newRating),
     image: newImage,
   };
@@ -139,9 +154,14 @@ document.getElementById("searchButton").addEventListener("click", async () => {
     if (!response.ok) throw new Error(`Error fetching restaurants for search: ${response.statusText}`);
     const data = await response.json();
 
-    const filtered = data.filter((restaurant) =>
-      restaurant.nom.toLowerCase().includes(query) || restaurant.specialite.toLowerCase().includes(query)
-    );
+    const filtered = data.filter((restaurant) => {
+      return (
+        (restaurant.nom && restaurant.nom.toLowerCase().includes(query)) ||
+        (restaurant.specialite && restaurant.specialite.toLowerCase().includes(query)) ||
+        (restaurant.phone && restaurant.phone.includes(query)) ||
+        (restaurant.email && restaurant.email.toLowerCase().includes(query))
+      );
+    });
 
     renderRestaurantListAdmin(filtered);
   } catch (error) {
@@ -150,7 +170,10 @@ document.getElementById("searchButton").addEventListener("click", async () => {
 });
 
 // Clear search
-document.getElementById("clearSearchButton").addEventListener("click", fetchRestaurantsAdmin);
+document.getElementById("clearSearchButton").addEventListener("click", () => {
+  document.getElementById("searchQuery").value = "";
+  fetchRestaurantsAdmin();
+});
 
 // Initial fetch to populate the list
 fetchRestaurantsAdmin();

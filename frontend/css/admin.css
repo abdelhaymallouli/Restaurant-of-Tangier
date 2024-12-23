@@ -1,63 +1,232 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7fc;
+  color: #333;
+  line-height: 1.6;
+  padding-top: 50px; /* Space for fixed header */
+}
+
+header {
+  background-color: #003366;
+  color: white;
+  padding: 15px 30px;
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+header h1 {
+  margin-left: 20px;
+}
+
+main {
+  margin: 30px auto;
+  max-width: 1200px;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 80px; /* Account for header */
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+section h2 {
+  font-size: 2rem;
+  color: #003366;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+form input, form button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+}
+
+form input:focus, form button:focus {
+  outline: none;
+  border-color: #0056b3;
+}
+
+form button {
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #003366;
+}
+
+/* Search Section */
+#searchRestaurant {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+#searchQuery {
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  width: 80%;
+}
+
+#searchButton, #clearSearchButton {
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#searchButton:hover, #clearSearchButton:hover {
+  background-color: #218838;
+}
+
+/* Restaurant List */
+#restaurantList {
+  margin-top: 2rem;
+}
+
+.restaurant-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  text-align: left;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.restaurant-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.restaurant-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.restaurant-card p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.restaurant-card button {
+  padding: 8px 12px;
+  border: none;
+  background-color: #dc3545;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  margin-right: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+.restaurant-card button:hover {
+  background-color: #c82333;
+}
+
+.restaurant-card button:last-child {
+  background-color: #ffc107;
+}
+
+.restaurant-card button:last-child:hover {
+  background-color: #e0a800;
+}
+
+/* Grid Layout for Restaurant Cards */
+#restaurantContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  form {
+    grid-template-columns: 1fr;
   }
-  
-  header {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
+
+  #searchRestaurant {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  main {
-    padding: 20px;
-  }
-  
-  section {
-    margin-bottom: 30px;
-  }
-  
-  h2 {
-    color: #333;
-  }
-  
-  form input, form button, #searchQuery {
-    display: block;
-    margin: 10px 0;
-    padding: 10px;
-    font-size: 16px;
-    width: 100%;
-    max-width: 400px;
-  }
-  
-  button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
+
   .restaurant-card {
-    background: #fff;
-    padding: 20px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    align-items: center;
+    text-align: center;
   }
-  
+
+  .restaurant-card img {
+    width: 90%;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.2rem;
+  }
+
   .restaurant-card h3 {
-    margin-top: 0;
+    font-size: 1.2rem;
   }
-  
-  .restaurant-card button {
-    margin-right: 10px;
+
+  .restaurant-card p {
+    font-size: 0.9rem;
   }
-  
+}

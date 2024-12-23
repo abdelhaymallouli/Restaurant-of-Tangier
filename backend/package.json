@@ -1,13 +1,1 @@
-{  "scripts": {
-  "dev": "nodemon server.js"
-},
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.21.2",
-    "fs": "^0.0.1-security",
-    "path": "^0.12.7"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.9"
-  }
-}
+{"scripts":{"dev":"nodemon server.js"},"dependencies":{"body-parser":"^1.20.3","cors":"^2.8.5","express":"^4.21.2","fs":"^0.0.1-security","path":"^0.12.7"},"devDependencies":{"nodemon":"^3.1.9"}}

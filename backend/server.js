@@ -2,11 +2,14 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const cors = require('cors'); // Importation du module cors
-
+const bodyParser = require("body-parser");
 const app = express();
 
 // Middleware pour gérer le CORS
 app.use(cors());
+
+// Middlewares
+app.use(bodyParser.json());
 
 // Middleware pour analyser les requêtes en JSON
 app.use(express.json());

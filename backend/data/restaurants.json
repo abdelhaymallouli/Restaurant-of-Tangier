@@ -85,6 +85,7 @@
     "notation": 4.4,
     "Phone": "+212 5393-56789",
     "Email": "contact@eltangerino.com",
+    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3236.9228841607896!2d-5.798589499999999!3d35.7772706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0c7f58c944478f%3A0x4d91410ed8a18814!2sEl%20Tangerino!5e0!3m2!1sen!2sma!4v1734941445098!5m2!1sen!2sma",
     "image": "https://teratlas.ma/wp-content/uploads/2023/12/ff38b43079494ae79adae3b5ad347f4e.jpg"
   },
   {
@@ -95,6 +96,7 @@
     "notation": 4.5,
     "Phone": "+212 5393-67890",
     "Email": "contact@lenabab.com",
+    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3236.5045052899486!2d-5.813870424082164!3d35.78754602412644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0c7f4da3b7c5f9%3A0x45802df1ea145ebb!2sLe%20Nabab!5e0!3m2!1sen!2sma!4v1734941499402!5m2!1sen!2sma" ,
     "image": "https://img.restaurantguru.com/c2ed-Le-Nabab-Tangier-view.jpg"
   },
   {
@@ -105,6 +107,7 @@
     "notation": 4.5,
     "Phone": "+212 5393-78901",
     "Email": "cappuccino@ma",
+    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3236.659882100643!2d-5.766137714088105!3d35.78373025358416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0c7f8f599d9c79%3A0x4eabac8811b3dc51!2sCappuccino!5e0!3m2!1sen!2sma!4v1734941567426!5m2!1sen!2sma",
     "image": "https://scontent.frba2-1.fna.fbcdn.net/v/t39.30808-6/306988011_389355060080172_7268438289662425377_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=105&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=Twl6jydp1A4Q7kNvgFDnE89&_nc_zt=23&_nc_ht=scontent.frba2-1.fna&_nc_gid=AOcT1TssG6cxel2BcmrpMir&oh=00_AYCl_8R9AYEUpdJSoKew4eLCf-MIaOo9KTkHQUYbr9uEWg&oe=6767453F"
   },
   {
@@ -115,6 +118,7 @@
     "notation": 4.3,
     "Phone": "+212 5393-89012",
     "Email": "info@cafehafa.com",
+    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3236.347561299417!2d-5.824428924081982!3d35.79139992391396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0c78b6d7a530cd%3A0xa3cf4c731aed4b79!2sCaf%C3%A9%20Hafa!5e0!3m2!1sen!2sma!4v1734941616318!5m2!1sen!2sma",
     "image": "https://www.tanger-experience.com/wp-content/uploads/2023/04/whahington-Poste-Cafe-Hafa-7541-750x350.jpg"
   },
   {
@@ -125,6 +129,7 @@
     "notation": 4.4,
     "Phone": "+212 5393-90123",
     "Email": "rrice@ma",
+    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3236.474065677699!2d-5.762532924082095!3d35.78829352408506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0c7f8fe148635f%3A0x8816194918aabe7a!2sRR%20Ice!5e0!3m2!1sen!2sma!4v1734942098889!5m2!1sen!2sma",
     "image": "https://pbs.twimg.com/media/Ea3ttG2XQAA6TW0?format=jpg&name=small"
   },
   {
@@ -135,6 +140,7 @@
     "notation": 4.7,
     "Phone": "+212 5393-12345",
     "Email": "villa_josephine@ma",
+    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3236.236805145442!2d-5.842393424081875!3d35.79411942376428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0c78bfb09c7051%3A0xfbe21637c143c0a3!2sVilla%20Josephine!5e0!3m2!1sen!2sma!4v1734942169948!5m2!1sen!2sma" ,
     "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/e7/5b/57/caption.jpg?w=1200&h=-1&s=1"
   },
   {
@@ -145,6 +151,7 @@
     "notation": 4.1,
     "Phone": "+212 5393-23456",
     "Email": "cafeparis@ma",
+    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3236.766070662419!2d-5.81743491408884!3d35.78112225372983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0c7f536f7d7997%3A0xd047f7ae5da2379e!2sGran%20Caf%C3%A9%20de%20Paris!5e0!3m2!1sen!2sma!4v1734942230350!5m2!1sen!2sma",
     "image": "https://www.nomadicbackpacker.com/uploads/9/9/5/9/9959097/le-gran-cafe-de-paris-tangiers-morocco_1.jpg"
   },
   {
@@ -155,6 +162,7 @@
     "notation": 4.0,
     "Phone": "+212 662-165644",
     "Email": "contact@omega3tanger.com",
+    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3237.661384226952!2d-5.840100974083229!3d35.75912672569091!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0b8769a3eb5cf5%3A0xea89828fe0bd9763!2sOmega%203%20Restaurant!5e0!3m2!1sen!2sma!4v1734942271627!5m2!1sen!2sma",
     "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/1f/e8/c5/welcome.jpg?w=900&h=500&s=1"
   },
   {
@@ -165,6 +173,7 @@
     "notation": 4.4,
     "Phone": "+212 5393-45678",
     "Email": "verandalounge@ma",
+    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3236.9716099116017!2d-5.787354124082561!3d35.77607372475799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0b809d13b509f3%3A0x1b68fd71480af447!2sLa%20Veranda!5e0!3m2!1sen!2sma!4v1734942308569!5m2!1sen!2sma",
     "image": "https://lh3.googleusercontent.com/p/AF1QipOOL-QP1_0Uz0hHtajytCoRLO_EJKf1A1hMQH0S=s680-w680-h510"
   },
   {
@@ -175,6 +184,7 @@
     "notation": 4.3,
     "Phone": "+212 5393-56789",
     "Email": "barcelocafe@ma",
+    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12949.644851389088!2d-5.822978990019972!3d35.76527396660532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0b80a4edbb3f6b%3A0xfb49fad00d098f5c!2sBarcel%C3%B3%20Tanger!5e0!3m2!1sen!2sma!4v1734942389664!5m2!1sen!2sma",
     "image": "https://cdn-fnbga.nitrocdn.com/tAUlWYyReWTSQTSbTBayZSCXnamUPFKB/assets/images/optimized/rev-3568e79/www.purlife-maroc.com/wp-content/uploads/2024/02/Pure-Life-Maroc-Barcelo-Tanger-1000x1000-3-21-800x480.jpg"
   },
   {
@@ -185,6 +195,7 @@
     "notation": 4.2,
     "Phone": "+212 5393-67890",
     "Email": "cafe.tangerina@ma",
+    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.3996867188353!2d-5.831056324083862!3d35.74097972668926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0b87003c95de5d%3A0xa10a80aef92043cc!2sCaf%C3%A9%20Tangerina!5e0!3m2!1sen!2sma!4v1734942435444!5m2!1sen!2sma",
     "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/d6/2e/d0/cafe-tingis.jpg?w=900&h=500&s=1"
   },
   {
@@ -195,6 +206,7 @@
     "notation": 4.6,
     "Phone": "+212 5393-78901",
     "Email": "dar.nour@ma",
+    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3236.487503969083!2d-5.816571424082153!3d35.78796352410333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0c7f538123ddbb%3A0x7da463bbf3484c2b!2sDar%20Nour!5e0!3m2!1sen!2sma!4v1734942492709!5m2!1sen!2sma",
     "image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/507434372.jpg?k=8914e05c8ff0f9997f508c07fcb9f4417afb86a07e0d490cbe3daed20e949a61&o=&hp=1"
   }
 ]

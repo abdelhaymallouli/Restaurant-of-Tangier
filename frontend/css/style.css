@@ -631,108 +631,235 @@ body {
 }
 
 
-  /* Layout for Restaurant Details */
-  .restaurant-container {
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
-    margin-bottom: 20px;
-  }
-  
-  .restaurant-content {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 5%;
-  }
-  
-  .restaurant-image {
-    margin-top: 50px;
-    object-fit: cover;
-    margin-left: 40px;
-    width: 30%;
-    height: 500px;
-    max-width: 500px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
+/* Restaurant Content Card */
+.restaurant-content {
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) 2fr;
+  gap: 2rem;
+  background: var(--card-background);
+  border-radius: 15px; 
+  overflow: hidden;
+  transition: all 0.3s ease-in-out; 
+  animation: slideIn 0.6s ease-out;
+}
 
-.restaurant-info {
-  display: flex;
-  flex-direction: column;
-  margin-top: 50px;
-  margin-right: 0;
-  padding: 90px 10px;
+/* Image Styling */
+
+
+.restaurant-image {
+  padding: 20px;
   width: 100%;
-  background-color: #F2F2F2;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease-in-out;
+}
+
+.restaurant-image:hover {
+  transform: scale(1.05);
+}
+
+/* Restaurant Information */
+.restaurant-info {
+  padding: 2rem;
 }
 
 .restaurant-info h2 {
-  margin-top: -7%;
-  padding: 30px 30px 0;
-  align-items: flex-start;
   font-family: var(--font-family);
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
 }
 
-.restaurant-info p {
-  font-family: var(--font-family);
-  font-size: 16px;
-  color: #6E6E6E;
-  padding: 10px 0 0 30px;
+.restaurant-info h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--secondary-color);
+  transition: all 0.3s ease-in-out;
 }
 
-.contact-section {
+.restaurant-info:hover h2::after {
+  width: 100px;
+}
+
+/* Address and Speciality */
+.address {
   display: flex;
-  flex-direction: row;
-      justify-content: center;
-      align-items: baseline;
-      margin-left: 25%;
-      margin-top: -12.9%;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-color);
+  font-family: var(--font-family);
+  margin-bottom: 1rem;
 }
+
+.address img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.8;
+}
+
+.speciality {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  font-weight: 400;
+  font-size: 1.1rem;
+  margin: 1rem 0;
+}
+
+/* Rating Section */
+.rating-details {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-family);
+  gap: 1rem;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: rgba(243, 156, 18, 0.1);
+  border-radius: 10px;
+}
+
+.rating-label {
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.rating-star {
+  color: var(--rating-color);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+/* Contact Section */
+.contact-section {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border-radius: 10px;
+  color: var(--white);
+}
+
 .contact-section h3 {
   font-family: var(--font-family);
-  font-size: 16px;
-  color: #6E6E6E;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--white);
 }
 
 .contact-section p {
-  display: block;
   font-family: var(--font-family);
-}
-
-/* stars */
-.rating-details {
-  margin-top: 1%;
-  margin-left: 3%;
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    font-family: var(--font-family);
-    color: #6E6E6E;
-}
-
-.location-section {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  margin-top: -23%; /* Adds spacing between restaurant-info and location-section */
-  padding: 20px 0;
-  margin-left: 34%;
-  width: 65%;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
 
+/* Location Section */
+.location-section {
+  margin-top: 1rem;
+  padding: 2rem;
+  background: var(--card-background);
+  border-radius: 15px;
 
 }
+
 .location-section h3 {
+  text-align: center;
   font-family: var(--font-family);
-  font-size: 18px;
-  color: #333333;
-  margin-bottom: 10px;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
 }
 
 .location-section iframe {
-  border: none;
   width: 100%;
-  height: 300px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 450px;
+  border: none;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .restaurant-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .restaurant-image {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .restaurant-info h2 {
+    font-size: 2rem;
+  }
+  
+  .contact-section {
+    padding: 1rem;
+  }
+  
+  .location-section iframe {
+    height: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .restaurant-info {
+    padding: 1rem;
+  }
+  
+  .restaurant-info h2 {
+    font-size: 1.8rem;
+  }
+  
+  .location-section iframe {
+    height: 300px;
+  }
+}
+
+
+/* code of others restaurants */
+
+#other_restaurant {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+  padding: 50px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  max-width: 100%;
+  margin: 0px auto;
+  background-color: var(--white);
+  border-radius: 15px;
+}
+
+#h3-title{
+  text-align: center;
+  color: var(--secondary-color);
+  font-size: 20px;
+  font-family: "Reenie Beanie", serif;
+}
+
+#h1-title{
+  font-family: var(--font-family);
+  color: var(--primary-color);
+  text-align: center;
+  font-size: 40px;
 }
