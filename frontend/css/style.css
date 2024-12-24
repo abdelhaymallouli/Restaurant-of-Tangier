@@ -169,12 +169,11 @@ body {
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
-/* introdution code */
-
-.introudction-section{
+.introudction-section {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Keep the text in a vertical column */
   padding: 90px 60px;
+  position: relative; /* To position the image absolutely */
 }
 
 .introudction-section h4 {
@@ -218,10 +217,15 @@ body {
 }
 
 .introudction-section img {
-  width: 30%;
-  display: flex;
-  justify-content: flex-end;
+  position: absolute; 
+  right: 60px; 
+  top: 50%; 
+  transform: translateY(-50%); 
+  width: 40%;
+  border-radius: 15px;
+  height: auto; 
 }
+
 /* card code  */
 .section-title {
     display: flex;

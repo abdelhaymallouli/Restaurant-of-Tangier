@@ -37,17 +37,22 @@ app.get('/restaurants/:id', (req, res) => {
 
 // POST pour ajouter un nouveau restaurant
 app.post('/restaurants', (req, res) => {
-    const { name, address, cuisine } = req.body;
-    if (!name || !address) {
+    const { nom, specialite, adresse, notation, Phone, Email, map, image} = req.body;
+    if (!nom || !specialite || !adresse, !notation, !Phone, !Email, !map, !image) {
         return res.status(400).json({ message: "Name and address are required" });
     }
 
     const restaurants = readRestaurantsData();
     const newRestaurant = {
         id: restaurants.length > 0 ? restaurants[restaurants.length - 1].id + 1 : 1, // Génération dynamique de l'ID
-        name,
-        address,
-        cuisine: cuisine || "General"
+        nom,
+        specialite,
+        adresse,
+        notation,
+        Phone,
+        Email,
+        map,
+        image,
     };
     restaurants.push(newRestaurant);
 
@@ -57,20 +62,30 @@ app.post('/restaurants', (req, res) => {
 });
 
 // PUT pour mettre à jour un restaurant par son ID
+// PUT pour mettre à jour un restaurant par son ID
 app.put('/restaurants/:id', (req, res) => {
     const restaurants = readRestaurantsData();
     const restaurant = restaurants.find(r => r.id === parseInt(req.params.id));
     if (!restaurant) return res.status(404).json({ message: 'Restaurant not found' });
 
-    const { name, address, cuisine } = req.body;
-    if (name) restaurant.name = name;
-    if (address) restaurant.address = address;
-    if (cuisine) restaurant.cuisine = cuisine;
+    const { nom, specialite, adresse, Phone, Email, map, image, notation } = req.body;
+    
+    // Update the restaurant properties
+    if (nom) restaurant.nom = nom;
+    if (specialite) restaurant.specialite = specialite;
+    if (adresse) restaurant.adresse = adresse;
+    if (Phone) restaurant.Phone = Phone;
+    if (Email) restaurant.Email = Email;
+    if (map) restaurant.map = map;
+    if (image) restaurant.image = image;
+    if (notation) restaurant.notation = notation;
 
+    // Save the updated list back to the file
     const dataPath = path.join(__dirname, 'data', 'restaurants.json');
-    fs.writeFileSync(dataPath, JSON.stringify(restaurants, null, 2)); // Sauvegarde après modification
-    res.json(restaurant);
+    fs.writeFileSync(dataPath, JSON.stringify(restaurants, null, 2)); // Write back to JSON file
+    res.json(restaurant); // Return the updated restaurant
 });
+
 
 // DELETE pour supprimer un restaurant par son ID
 app.delete('/restaurants/:id', (req, res) => {

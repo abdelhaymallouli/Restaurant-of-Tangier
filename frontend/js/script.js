@@ -59,6 +59,7 @@ document.getElementById("clearButton").addEventListener("click", () => {
 
 fetchRestaurants();
 
+
 function createStarRating(note) {
   const filledWidth = (note / 5) * 100; // Percentage of filled stars
   return `
