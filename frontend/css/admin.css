@@ -1,221 +1,277 @@
-@import url('https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Reenie+Beanie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-
-/* General Layout */
-body {
-  font-family : "Poppins", serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f7fc;
-  color: #333;
-  line-height: 1.6;
+:root {
+  --primary-color: #2563eb;
+  --secondary-color: #64748b;
+  --success-color: #10b981;
+  --danger-color: #ef4444;
+  --warning-color: #f59e0b;
+  --background-color: #f1f5f9;
+  --text-color: #1e293b;
+  --border-color: #e2e8f0;
+  --card-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+  --header-height: 70px;
 }
 
-/* Header */
+/* Base Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  min-height: 100vh;
+}
+
+/* Header Styles */
 .admin-header {
+  height: var(--header-height);
+  background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #2c3e50;
-  color: white;
-  padding: 20px 20px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  font-weight: bold;
+  padding: 0 2rem;
+  box-shadow: var(--card-shadow);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
 }
 
-.admin-header img{
-  width: 80px;
+.admin-header img {
+  height: 45px;
+  width: auto;
 }
 
-/* Navigation Bar */
-.admin-nav {
-  align-items: center;
-}
-
+/* Navigation Styles */
 .admin-nav ul {
-  list-style: none;
   display: flex;
-  gap: 20px;
-}
-
-.admin-nav li {
+  gap: 2rem;
+  list-style: none;
   margin: 0;
+  padding: 0;
 }
 
 .admin-nav a {
-  color: white;
+  color: var(--secondary-color);
   text-decoration: none;
-  font-size: 1rem;
   font-weight: 500;
-  transition: color 0.3s ease;
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
 }
 
 .admin-nav a:hover {
-  color: #0056b3;
-  text-decoration: none;
-  text-decoration: underline;
+  color: var(--primary-color);
+  background-color: #f8fafc;
 }
 
-
-/* Search Bar */
+/* Search Container */
 .search-container {
   display: flex;
-  gap: 15px;
-  align-items: flex-end;
+  gap: 0.75rem;
+  align-items: center;
 }
 
 .search-input {
-  padding: 9px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
   width: 300px;
-  box-sizing: border-box;
-  transition: border-color 0.3s ease-in-out;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
 }
 
 .search-input:focus {
-  border: 2px solid #1BBC9B;
   outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
+/* Button Styles */
 .btn {
-  padding: 10px 15px;
-  font-size: 16px;
+  padding: 0.6rem 1.2rem;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.9rem;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .btn-primary {
-  background-color: #1BBC9B;
+  background-color: var(--primary-color);
   color: white;
 }
 
 .btn-secondary {
-  background-color: #1BBC9B;
+  background-color: var(--secondary-color);
   color: white;
 }
 
 .btn-success {
-  background-color: #28a745;
+  background-color: var(--success-color);
   color: white;
 }
 
 .btn-danger {
-  background-color: #dc3545;
+  background-color: var(--danger-color);
   color: white;
 }
 
 .btn:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
 }
 
-.btn-primary:hover {
-  background-color: #0056b3;
-}
-
-.btn-secondary:hover {
-  background-color: #5a6268;
-}
-
-.btn-success:hover {
-  background-color: #218838;
-}
-
-.btn-danger:hover {
-  background-color: #c82333;
+/* Main Content */
+main {
+  margin-top: var(--header-height);
+  padding: 2rem;
 }
 
 /* Add Restaurant Form */
 #addRestaurant {
   background-color: white;
-  padding: 25px;
-  margin: 30px;
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  max-width: 500px;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: var(--card-shadow);
+  max-width: 800px;
+  margin: 0 auto 2rem;
 }
 
 #addRestaurant h2 {
-  margin-top: 0;
+  color: var(--text-color);
   font-size: 1.5rem;
-  color: #007bff;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
 }
 
-#addForm input,
-#addForm button {
-  display: block;
+#addForm {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+#addForm input {
   width: 100%;
-  margin: 12px 0;
-  padding: 12px;
-  font-size: 16px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+#addForm input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
 #addForm button {
-  background-color: #28a745;
-  color: white;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease-in-out;
-}
-
-#addForm button:hover {
-  background-color: #218838;
-  transform: translateY(-2px);
+  grid-column: span 2;
+  width: fit-content;
+  justify-self: end;
+  margin-top: 1rem;
 }
 
 /* Restaurant Table */
 .restaurant-table {
   width: 100%;
-  border-collapse: collapse;
-  margin: 30px 0;
   background-color: white;
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-}
-
-.restaurant-table th,
-.restaurant-table td {
-  padding: 12px 15px;
-  text-align: left;
-  border: 1px solid #ddd;
-  font-size: 16px;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  border-collapse: collapse;
+  overflow: hidden;
 }
 
 .restaurant-table th {
-  background-color: #007bff;
-  color: white;
-  text-transform: uppercase;
+  background-color: #f8fafc;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--secondary-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .restaurant-table td {
-  background-color: #f9f9f9;
-}
-
-.restaurant-table tr:nth-child(even) td {
-  background-color: #f1f1f1;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-color);
 }
 
 .restaurant-table tr:hover td {
-  background-color: #f1f1f1;
-  transition: background-color 0.3s ease;
+  background-color: #f8fafc;
 }
 
 .restaurant-image {
-  width: 50px;
-  height: 50px;
-  border-radius: 6px;
+  width: 60px;
+  height: 60px;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
 }
 
-.restaurant-image:hover {
-  transform: scale(1.1);
+/* Restaurant List Section */
+#restaurantList {
+  margin-top: 2rem;
+}
+
+#restaurantList h2 {
+  color: var(--text-color);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  #addForm {
+    grid-template-columns: 1fr;
+  }
+
+  #addForm button {
+    grid-column: 1;
+  }
+
+  .search-input {
+    width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-header {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .admin-nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .search-container {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  .restaurant-table {
+    display: block;
+    overflow-x: auto;
+  }
 }

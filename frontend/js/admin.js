@@ -86,6 +86,7 @@ document.getElementById("searchButton").addEventListener("click", async () => {
 
     renderRestaurantListAdmin(filtered);
   } catch (error) {
+    
     console.error("Error searching restaurants:", error.message);
   }
 });
@@ -99,19 +100,22 @@ document.getElementById("clearSearchButton").addEventListener("click", () => {
 // Initial fetch to populate the list
 fetchRestaurantsAdmin();
 
-// code of add resturant
+// Add restaurant
 document.getElementById("addForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 
+  const form = document.getElementById("addForm");
+  const restaurantId = form.dataset.restaurantId;
+
   const newRestaurant = {
-    nom: document.getElementById("addNom").value.trim(), // Correct field for "nom"
-    specialite: document.getElementById("addSpecialite").value.trim(), // Correct field for "specialite"
-    adresse: document.getElementById("addAdresse").value.trim(), // Correct field for "adresse"
-    notation: parseFloat(document.getElementById("addNotation").value.trim()), // Correct field for "notation"
-    Phone: document.getElementById("addPhone").value.trim(), // Correct field for "Phone"
-    Email: document.getElementById("addEmail").value.trim(), // Correct field for "Email"
-    map: document.getElementById("addMap").value.trim(), // Correct field for "map"
-    image: document.getElementById("addImage").value.trim(), // Correct field for "image"
+    nom: document.getElementById("addNom").value.trim(),
+    specialite: document.getElementById("addSpecialite").value.trim(),
+    adresse: document.getElementById("addAdresse").value.trim(),
+    notation: parseFloat(document.getElementById("addNotation").value.trim()),
+    Phone: document.getElementById("addPhone").value.trim(),
+    Email: document.getElementById("addEmail").value.trim(),
+    map: document.getElementById("addMap").value.trim(),
+    image: document.getElementById("addImage").value.trim(),
   };
 
   // Validate inputs
@@ -129,29 +133,39 @@ document.getElementById("addForm").addEventListener("submit", async (e) => {
     return;
   }
 
-  console.log("Payload being sent:", JSON.stringify(newRestaurant)); // Log payload for debugging
-
   try {
-    const response = await fetch(apiURL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newRestaurant),
-    });
+    let response;
 
-    const responseBody = await response.text();
-    console.log("Response status:", response.status);
-    console.log("Response body:", responseBody);
+    // Check if we are in edit mode (i.e., restaurantId exists)
+    if (restaurantId) {
+      // Send a PUT request for updating the restaurant
+      response = await fetch(`${apiURL}/${restaurantId}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newRestaurant),
+      });
 
-    if (!response.ok) throw new Error(responseBody || response.statusText);
+      if (!response.ok) throw new Error(`Error updating restaurant: ${response.statusText}`);
+      alert("Restaurant updated successfully!");
+    } else {
+      // Send a POST request to add a new restaurant
+      response = await fetch(apiURL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newRestaurant),
+      });
 
-    alert("Restaurant added successfully!");
-    document.getElementById("addForm").reset();
+      if (!response.ok) throw new Error(response.statusText);
+      alert("Restaurant added successfully!");
+    }
+
+    // Reset the form and refresh the restaurant list
+    resetForm();
     fetchRestaurantsAdmin();
   } catch (error) {
-    console.error("Error adding restaurant:", error.message);
+    console.error("Error processing restaurant:", error.message);
   }
 });
-
 
 // Edit a restaurant
 async function editRestaurant(id) {
@@ -164,67 +178,19 @@ async function editRestaurant(id) {
     document.getElementById("addNom").value = restaurant.nom;
     document.getElementById("addSpecialite").value = restaurant.specialite;
     document.getElementById("addAdresse").value = restaurant.adresse;
-    document.getElementById("addPhone").value = restaurant.Phone; 
-    document.getElementById("addEmail").value = restaurant.Email; 
+    document.getElementById("addPhone").value = restaurant.Phone;
+    document.getElementById("addEmail").value = restaurant.Email;
     document.getElementById("addMap").value = restaurant.map;
-    document.getElementById("addNotation").value = restaurant.notation;
+    document.getElementById("addNotation").value = restaurant.notation.toFixed(1); // Ensure decimal precision
     document.getElementById("addImage").value = restaurant.image;
 
-    // Set the ID in the form dataset
+    // Set the ID in the form dataset to indicate we are editing
     const form = document.getElementById("addForm");
     form.dataset.restaurantId = id;
 
     // Change button text to "Update Restaurant"
     const submitButton = form.querySelector("button");
     submitButton.textContent = "Update Restaurant";
-
-    form.onsubmit = async (event) => {
-      event.preventDefault();
-
-      // Gather updated data from the form
-      const updatedRestaurant = {
-        nom: document.getElementById("addNom").value.trim(),
-        specialite: document.getElementById("addSpecialite").value.trim(),
-        adresse: document.getElementById("addAdresse").value.trim(),
-        Phone: document.getElementById("addPhone").value.trim(),
-        Email: document.getElementById("addEmail").value.trim(),
-        map: document.getElementById("addMap").value.trim(),
-        notation: parseFloat(document.getElementById("addNotation").value.trim()),
-        image: document.getElementById("addImage").value.trim(),
-      };
-
-      // Validate inputs
-      if (
-        !updatedRestaurant.nom || 
-        !updatedRestaurant.specialite || 
-        isNaN(updatedRestaurant.notation) || 
-        updatedRestaurant.notation < 1.0 || 
-        updatedRestaurant.notation > 5.0
-      ) {
-        alert("Please fill all fields correctly.");
-        return;
-      }
-
-      try {
-        // Send the PUT request to update the restaurant
-        const updateResponse = await fetch(`${apiURL}/${id}`, {
-          method: "PUT",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(updatedRestaurant),
-        });
-
-        if (!updateResponse.ok) throw new Error(`Error updating restaurant: ${updateResponse.statusText}`);
-
-        const updatedData = await updateResponse.json();
-        console.log("Updated restaurant data:", updatedData); // Log the updated data
-
-        alert("Restaurant updated successfully!");
-        resetForm(); // Reset the form after updating
-        fetchRestaurantsAdmin(); // Refresh the restaurant list
-      } catch (error) {
-        console.error("Error updating restaurant:", error.message);
-      }
-    };
   } catch (error) {
     console.error("Error fetching restaurant:", error.message);
   }

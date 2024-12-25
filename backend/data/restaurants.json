@@ -96,7 +96,7 @@
     "Phone": "+212 5393-78901",
     "Email": "cappuccino@ma",
     "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3236.659882100643!2d-5.766137714088105!3d35.78373025358416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0c7f8f599d9c79%3A0x4eabac8811b3dc51!2sCappuccino!5e0!3m2!1sen!2sma!4v1734941567426!5m2!1sen!2sma",
-    "image": "https://scontent.frba2-1.fna.fbcdn.net/v/t39.30808-6/306988011_389355060080172_7268438289662425377_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=105&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=Twl6jydp1A4Q7kNvgFDnE89&_nc_zt=23&_nc_ht=scontent.frba2-1.fna&_nc_gid=AOcT1TssG6cxel2BcmrpMir&oh=00_AYCl_8R9AYEUpdJSoKew4eLCf-MIaOo9KTkHQUYbr9uEWg&oe=6767453F"
+    "image": "https://media-cdn.tripadvisor.com/media/photo-s/09/f5/f2/33/cefe-cappuccino.jpg"
   },
   {
     "id": 12,
@@ -196,60 +196,5 @@
     "Email": "dar.nour@ma",
     "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3236.487503969083!2d-5.816571424082153!3d35.78796352410333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0c7f538123ddbb%3A0x7da463bbf3484c2b!2sDar%20Nour!5e0!3m2!1sen!2sma!4v1734942492709!5m2!1sen!2sma",
     "image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/507434372.jpg?k=8914e05c8ff0f9997f508c07fcb9f4417afb86a07e0d490cbe3daed20e949a61&o=&hp=1"
-  },
-  {
-    "id": 21,
-    "nom": "Crumby",
-    "specialite": "Cafe, International, Contemporary, Fusion, Healthy",
-    "adresse": "Boulevard Mohamed VI, Tangier",
-    "notation": 5,
-    "Phone": "+212 5393-34973",
-    "Email": "imad@Crumby.ma",
-    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3236.67139009076!2d-5.822982624697087!3d35.78344762435299!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0c7953368a0387%3A0x8c45bb741feebf9e!2sCrumby!5e0!3m2!1sen!2sma!4v1734785317553!5m2!1sen!2sma",
-    "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2e/4c/47/6d/located-not-far-from.jpg?w=900&h=500&s=1"
-  },
-  {
-    "id": 22,
-    "nom": "El Morocco Clu",
-    "specialite": "Mediterranean & Moroccan",
-    "adresse": "Place du Tabor, Kasbah, Tangier",
-    "notation": 4,
-    "Phone": "+212 5393-67890",
-    "Email": "contact@elmoroccoclub.com",
-    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3236.454221604379!2d-5.817105424696818!3d35.78878082405938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0c78b327e25521%3A0xcc17ebad8b411d8!2sEl%20Morocco%20Club!5e0!3m2!1sen!2sma!4v1734785431465!5m2!1sen!2sma",
-    "image": "https://cdn-fnbga.nitrocdn.com/tAUlWYyReWTSQTSbTBayZSCXnamUPFKB/assets/images/optimized/rev-3568e79/www.purlife-maroc.com/wp-content/uploads/2022/02/El-Marocco-Club-Tanger-Pur-Life-Maroc-7.jpg"
-  },
-  {
-    "id": 23,
-    "nom": "El Morocco Club",
-    "specialite": "Mediterranean & Moroccan",
-    "adresse": "Place du Tabor, Kasbah, Tangier",
-    "notation": 4,
-    "Phone": "+212 5393-67890",
-    "Email": "contact@elmoroccoclub.co",
-    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3236.454221604379!2d-5.817105424696818!3d35.78878082405938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0c78b327e25521%3A0xcc17ebad8b411d8!2sEl%20Morocco%20Club!5e0!3m2!1sen!2sma!4v1734785431465!5m2!1sen!2sma",
-    "image": "https://cdn-fnbga.nitrocdn.com/tAUlWYyReWTSQTSbTBayZSCXnamUPFKB/assets/images/optimized/rev-3568e79/www.purlife-maroc.com/wp-content/uploads/2022/02/El-Marocco-Club-Tanger-Pur-Life-Maroc-7.jpg"
-  },
-  {
-    "id": 24,
-    "nom": "Le Mirage",
-    "specialite": "Luxury Seafood",
-    "adresse": "Route de Cap Spartel, Tangier",
-    "notation": 4,
-    "Phone": "+212 5393-12345",
-    "Email": "info@lemirage.ma",
-    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3236.494134468515!2d-5.8660541!3d35.7878007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0c79e9566c04ab%3A0x47d83f619cc50a20!2sCaf%C3%A9%20Le%20Mirage!5e0!3m2!1sen!2sma!4v1734785059004!5m2!1sen!2sma",
-    "image": "https://scontent.frba3-2.fna.fbcdn.net/v/t1.6435-9/71061500_2400517006826676_107908682490052608_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=3NWHt9y9iIsQ7kNvgF1JAqL&_nc_zt=23&_nc_ht=scontent.frba3-2.fna&_nc_gid=A1SGjbtUxT0LllzyZrW8DEY&oh=00_AYBm6qG82eWo6BgIuAfNhx3tPnJKNi5xQmEaSPZcM5_0fA&oe=6788F119"
-  },
-  {
-    "id": 25,
-    "nom": "El Morocco Club",
-    "specialite": "Mediterranean & Moroccan",
-    "adresse": "Place du Tabor, Kasbah, Tangier",
-    "notation": 4,
-    "Phone": "+212 5393-67890",
-    "Email": "contact@elmoroccoclub.com",
-    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3236.454221604379!2d-5.817105424696818!3d35.78878082405938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0c78b327e25521%3A0xcc17ebad8b411d8!2sEl%20Morocco%20Club!5e0!3m2!1sen!2sma!4v1734785431465!5m2!1sen!2sma",
-    "image": "https://cdn-fnbga.nitrocdn.com/tAUlWYyReWTSQTSbTBayZSCXnamUPFKB/assets/images/optimized/rev-3568e79/www.purlife-maroc.com/wp-content/uploads/2022/02/El-Marocco-Club-Tanger-Pur-Life-Maroc-7.jpg"
   }
 ]

@@ -36,7 +36,7 @@ function renderRestaurantDetails(restaurant) {
       <span class="rating-star">${restaurant.notation}</span>
     </div>
     <div class="contact-section">
-      <h3>Contact :!</h3>
+      <h3>Contact :</h3>
       <p><strong>Phone :</strong> ${restaurant.Phone}</p>
       <p><strong>Email :</strong> ${restaurant.Email}</p>
     </div>

@@ -171,9 +171,9 @@ body {
 
 .introudction-section {
   display: flex;
-  flex-direction: column; /* Keep the text in a vertical column */
+  flex-direction: column; 
   padding: 90px 60px;
-  position: relative; /* To position the image absolutely */
+  position: relative; 
 }
 
 .introudction-section h4 {
@@ -394,7 +394,7 @@ body {
   align-items: center;
 }
 
-/* Your existing button styles */
+/* Style of more Content */
 .more-content {
   position: relative;
   display: inline-block;
@@ -479,6 +479,8 @@ body {
 .more-content:hover .button-text {
   color: #fff;
 }
+
+
 /* tangier tour  */
 .city-tour {
   display: flex;
@@ -499,7 +501,7 @@ body {
   height: 639px;
 }
 
-/* FOOTER */
+/********************************************FOOTER *******************************************/
 .site-footer {
   background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/arhihou-anas-Kn6isYSQaqs-unsplash.jpg");
   background-size: cover; /* Ensures the image covers the entire footer */
@@ -606,7 +608,7 @@ body {
 }
 
 
-/* design of restaurant.html page */
+/***************** design of header of Restaurant.html  *************************************************************************************/
   /* Header Styling */
   .restaurant-header {
     background-color: var(--primary-color);
@@ -642,32 +644,116 @@ body {
 }
 
 
-/* Restaurant Content Card */
-.restaurant-content {
-  display: grid;
-  grid-template-columns: minmax(300px, 1fr) 2fr;
-  gap: 2rem;
-  background: var(--card-background);
-  border-radius: 15px; 
-  overflow: hidden;
-  transition: all 0.3s ease-in-out; 
-  animation: slideIn 0.6s ease-out;
+/*************** design of  in details.html  ****************/
+.details-header {
+  background-color: var(--primary-color);
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 50px;
+  z-index: 10;
 }
 
-/* Image Styling */
 
+.details-header nav {
+display: flex;
+align-items: center;
+justify-content: center;
+margin-right: 32%;
+gap: 30px;
 
-.restaurant-image {
-  padding: 20px;
+}
+
+.details-header nav a {
+text-decoration: none;
+color: var(--white);
+font-family: var(--font-family);
+font-size: 16px;
+transition: all 0.5s ease;
+}
+
+.details-header nav a:hover {
+color: var(--secondary-color);
+}
+
+/* From Uiverse.io by gharsh11032000 */ 
+.button-search-details {
+  position: relative;
+  border: none;
+  background-color: var(--primary-color);
+  color: #212121;
+  padding: 10px 15px;
+  display: flex;
+  margin-right: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  gap: 10px;
+  border-radius: 10px;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.button-search-details span {
+  position: relative;
+  width: 20px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.button-search-details::before {
+  content: "";
+  position: absolute;
+  background-color: var(--secondary-color);
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: all 0.3s ease-in-out;
+  left: 0%;
+  bottom: 0%;
+  transform: translate(-100%, 100%);
+  border-radius: inherit;
 }
 
-.restaurant-image:hover {
-  transform: scale(1.05);
+.button-search-details svg {
+  
+  fill: var(--secondary-color);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
 }
+
+.button-search-details:hover::before {
+  animation: shakeBack 0.6s forwards;
+}
+
+.button-search-details:hover svg {
+  fill: var(--primary-color);
+  scale: 1.3;
+}
+
+.button-search-details:active {
+  box-shadow: none;
+}
+
+@keyframes shakeBack {
+  0% {
+    transform: translate(-100%, 100%);
+  }
+
+  50% {
+    transform: translate(20%, -20%);
+  }
+
+  100% {
+    transform: translate(0%, 0%);
+  }
+}
+
+
+/********************************************* design of page of details.html *********************************************/
 
 /* Restaurant Information */
 .restaurant-info {
@@ -698,6 +784,31 @@ body {
   width: 100px;
 }
 
+
+.restaurant-content {
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) 2fr;
+  gap: 2rem;
+  background: var(--card-background);
+  border-radius: 15px; 
+  overflow: hidden;
+  transition: all 0.3s ease-in-out; 
+  animation: slideIn 0.6s ease-out;
+}
+
+
+/* Image Styling */
+.restaurant-image {
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease-in-out;
+}
+
+.restaurant-image:hover {
+  transform: scale(1.05);
+}
 /* Address and Speciality */
 .address {
   display: flex;

@@ -1,19 +1,19 @@
-async function fetchRestaurants() {
+async function fetchRestaurants(searchTerm = "") {
   try {
-    const urlParams = new URLSearchParams(window.location.search);
-    const searchTerm = urlParams.get("search")?.toLowerCase() || "";
-
     const response = await fetch("http://localhost:3000/restaurants");
     const data = await response.json();
 
+    // Filter data if a searchTerm is provided
     if (searchTerm) {
       const filtered = data.filter(r =>
-        r.nom.toLowerCase().includes(searchTerm) ||
-        r.specialite.toLowerCase().includes(searchTerm)
+        r.nom.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        r.specialite.toLowerCase().includes(searchTerm.toLowerCase())
       );
       renderRestaurants(filtered);
     } else {
-      renderRestaurants(data);
+      const sortedRestaurants = data.sort((a, b) => b.notation - a.notation);
+
+      renderRestaurants(sortedRestaurants); // Show all restaurants if no search term
     }
   } catch (error) {
     console.error("Error fetching restaurants:", error);
@@ -47,18 +47,23 @@ function renderRestaurants(restaurants) {
 }
 
 function searchRestaurants() {
-  const searchTerm = document.getElementById("search").value.toLowerCase();
-  window.location.href = `index.html?search=${encodeURIComponent(searchTerm)}`;
+  const searchTerm = document.getElementById("search").value.trim().toLowerCase();
+  fetchRestaurants(searchTerm);
 }
 
-document.getElementById("searchButton").addEventListener("click", searchRestaurants);
+document.getElementById("searchButton").addEventListener("click", () => {
+  document.getElementById("button-container").style.display = "none";
+  searchRestaurants();
+});
+
 document.getElementById("clearButton").addEventListener("click", () => {
   document.getElementById("search").value = "";
+  document.getElementById("button-container").style.display = "flex";
   fetchRestaurants();
 });
 
+// Initial fetch to display all restaurants
 fetchRestaurants();
-
 
 function createStarRating(note) {
   const filledWidth = (note / 5) * 100; // Percentage of filled stars
