@@ -13,7 +13,6 @@ async function fetchRestaurants(searchTerm = "") {
       
       // Sort the filtered restaurants by notation (rating) in descending order
       const sortedRestaurants = filtered.sort((a, b) => b.notation - a.notation);
-      
       renderRestaurants(sortedRestaurants);
   } catch (error) {
       console.error("Error fetching restaurants:", error);
@@ -48,6 +47,12 @@ function searchRestaurants() {
   fetchRestaurants(searchTerm);
 }
 
+document.getElementById("searchButton").addEventListener("click", searchRestaurants);
+document.getElementById("clearButton").addEventListener("click", () => {
+  document.getElementById("search").value = "";
+  fetchRestaurants();
+});
+
 function createStarRating(note) {
   const filledWidth = (note / 5) * 100;
   return `
@@ -57,10 +62,5 @@ function createStarRating(note) {
   `;
 }
 
-document.getElementById("searchButton").addEventListener("click", searchRestaurants);
-document.getElementById("clearButton").addEventListener("click", () => {
-  document.getElementById("search").value = "";
-  fetchRestaurants();
-});
 
 fetchRestaurants();

@@ -72,8 +72,11 @@ function renderRestaurants(restaurants) {
   const container = document.getElementById("other_restaurant");
   container.innerHTML = "";
 
-  // Limit the number of restaurants displayed to 6
-  const limitedRestaurants = restaurants.slice(0, 3);
+  // Shuffle the restaurants array
+  const shuffledRestaurants = restaurants.sort(() => Math.random() - 0.5);
+
+  // Select the first 3 restaurants after shuffling
+  const limitedRestaurants = shuffledRestaurants.slice(0, 3);
 
   limitedRestaurants.forEach(restaurant => {
     const div = document.createElement("div");

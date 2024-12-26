@@ -61,8 +61,8 @@ app.post('/restaurants', (req, res) => {
     res.status(201).json(newRestaurant);
 });
 
-// PUT pour mettre à jour un restaurant par son ID
-// PUT pour mettre à jour un restaurant par son ID
+
+
 app.put('/restaurants/:id', (req, res) => {
     const restaurants = readRestaurantsData();
     const restaurant = restaurants.find(r => r.id === parseInt(req.params.id));

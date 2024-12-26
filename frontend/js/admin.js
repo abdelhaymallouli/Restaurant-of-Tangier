@@ -4,7 +4,10 @@ const apiURL = "http://localhost:3000/restaurants";
 async function fetchRestaurantsAdmin() {
   try {
     const response = await fetch(apiURL);
-    if (!response.ok) throw new Error(`Error fetching restaurants: ${response.statusText}`);
+    if (!response.ok) {
+      console.error(`Error fetching restaurants: ${response.statusText}`);
+      return;
+    }
     const data = await response.json();
     renderRestaurantListAdmin(data);
   } catch (error) {
@@ -72,7 +75,10 @@ document.getElementById("searchButton").addEventListener("click", async () => {
 
   try {
     const response = await fetch(apiURL);
-    if (!response.ok) throw new Error(`Error fetching restaurants for search: ${response.statusText}`);
+    if (!response.ok) {
+      console.error(`Error fetching restaurants for search: ${response.statusText}`);
+      return;
+    }
     const data = await response.json();
 
     const filtered = data.filter((restaurant) => {
@@ -86,7 +92,6 @@ document.getElementById("searchButton").addEventListener("click", async () => {
 
     renderRestaurantListAdmin(filtered);
   } catch (error) {
-    
     console.error("Error searching restaurants:", error.message);
   }
 });
@@ -100,7 +105,7 @@ document.getElementById("clearSearchButton").addEventListener("click", () => {
 // Initial fetch to populate the list
 fetchRestaurantsAdmin();
 
-// Add restaurant
+// Add/Edit restaurant
 document.getElementById("addForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 
@@ -134,36 +139,60 @@ document.getElementById("addForm").addEventListener("submit", async (e) => {
   }
 
   try {
-    let response;
+    // Check if restaurant name already exists
+    const existingResponse = await fetch(apiURL);
+    if (!existingResponse.ok) {
+      throw new Error("Failed to fetch existing restaurants");
+    }
+    const existingRestaurants = await existingResponse.json();
+    
+    const isDuplicate = existingRestaurants.some(restaurant => 
+      restaurant.nom.toLowerCase() === newRestaurant.nom.toLowerCase() && 
+      restaurant.id !== parseInt(restaurantId) 
+    );
 
-    // Check if we are in edit mode (i.e., restaurantId exists)
+    if (isDuplicate) {
+      alert("A restaurant with this name already exists!");
+      return;
+    }
+
+    let response;
+    
     if (restaurantId) {
-      // Send a PUT request for updating the restaurant
+      // Update existing restaurant
       response = await fetch(`${apiURL}/${restaurantId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newRestaurant),
       });
-
-      if (!response.ok) throw new Error(`Error updating restaurant: ${response.statusText}`);
+      
+      if (!response.ok) {
+        console.error(`Error updating restaurant: ${response.statusText}`);
+        alert("Failed to update restaurant.");
+        return;
+      }
       alert("Restaurant updated successfully!");
     } else {
-      // Send a POST request to add a new restaurant
+      // Add new restaurant
       response = await fetch(apiURL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newRestaurant),
       });
-
-      if (!response.ok) throw new Error(response.statusText);
+      
+      if (!response.ok) {
+        console.error(`Error adding restaurant: ${response.statusText}`);
+        alert("Failed to add restaurant.");
+        return;
+      }
       alert("Restaurant added successfully!");
     }
 
-    // Reset the form and refresh the restaurant list
     resetForm();
     fetchRestaurantsAdmin();
   } catch (error) {
     console.error("Error processing restaurant:", error.message);
+    alert("An error occurred while processing the restaurant. Please try again.");
   }
 });
 
@@ -171,7 +200,13 @@ document.getElementById("addForm").addEventListener("submit", async (e) => {
 async function editRestaurant(id) {
   try {
     const response = await fetch(`${apiURL}/${id}`);
-    if (!response.ok) throw new Error(`Error fetching restaurant data: ${response.statusText}`);
+    
+    if (!response.ok) {
+      console.error(`Error fetching restaurant data: ${response.statusText}`);
+      alert("Error fetching restaurant data. Please try again.");
+      return; // Stop execution if there is an error
+    }
+
     const restaurant = await response.json();
 
     // Pre-fill the form with current restaurant data
@@ -181,7 +216,7 @@ async function editRestaurant(id) {
     document.getElementById("addPhone").value = restaurant.Phone;
     document.getElementById("addEmail").value = restaurant.Email;
     document.getElementById("addMap").value = restaurant.map;
-    document.getElementById("addNotation").value = restaurant.notation.toFixed(1); // Ensure decimal precision
+    document.getElementById("addNotation").value = restaurant.notation.toFixed(1);
     document.getElementById("addImage").value = restaurant.image;
 
     // Set the ID in the form dataset to indicate we are editing
@@ -191,8 +226,10 @@ async function editRestaurant(id) {
     // Change button text to "Update Restaurant"
     const submitButton = form.querySelector("button");
     submitButton.textContent = "Update Restaurant";
+
   } catch (error) {
     console.error("Error fetching restaurant:", error.message);
+    alert("Error loading restaurant data. Please try again.");
   }
 }
 
@@ -200,20 +237,25 @@ async function editRestaurant(id) {
 async function deleteRestaurant(id) {
   if (!confirm("Are you sure you want to delete this restaurant?")) return;
 
-  try {
-    const response = await fetch(`${apiURL}/${id}`, { method: "DELETE" });
-    if (!response.ok) throw new Error(`Error deleting restaurant: ${response.statusText}`);
-    alert("Restaurant deleted successfully!");
+    try {
+      const response = await fetch(`${apiURL}/${id}`, { method: "DELETE" });
+      if (!response.ok) {
+        console.error(`Error deleting restaurant: ${response.statusText}`);
+        alert("Error deleting restaurant. Please try again.");
+        return; // If the response is not okay, we stop the function
+      }  
     fetchRestaurantsAdmin();
   } catch (error) {
     console.error("Error deleting restaurant:", error.message);
+    alert("Error deleting restaurant. Please try again.");
   }
 }
 
+// Reset form function
 function resetForm() {
   const form = document.getElementById("addForm");
   form.reset();
   const submitButton = form.querySelector("button");
   submitButton.textContent = "Add Restaurant";
-  delete form.dataset.restaurantId; // Remove restaurant ID
+  delete form.dataset.restaurantId;
 }

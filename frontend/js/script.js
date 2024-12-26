@@ -12,7 +12,6 @@ async function fetchRestaurants(searchTerm = "") {
       renderRestaurants(filtered);
     } else {
       const sortedRestaurants = data.sort((a, b) => b.notation - a.notation);
-
       renderRestaurants(sortedRestaurants); // Show all restaurants if no search term
     }
   } catch (error) {
