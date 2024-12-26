@@ -4,7 +4,6 @@
   --primary-color: #2563eb;
   --secondary-color: #64748b;
   --success-color: #10b981;
-  --danger-color: #ef4444;
   --warning-color: #f59e0b;
   --background-color: #f1f5f9;
   --text-color: #1e293b;
@@ -119,10 +118,7 @@ body {
   color: white;
 }
 
-.btn-danger {
-  background-color: var(--danger-color);
-  color: white;
-}
+
 
 .btn:hover {
   transform: translateY(-1px);

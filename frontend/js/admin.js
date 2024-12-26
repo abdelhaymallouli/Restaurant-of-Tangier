@@ -59,7 +59,6 @@ function renderRestaurantListAdmin(restaurants) {
       <td><a href="${restaurant.map}" target="_blank">View Map</a></td>
       <td>${restaurant.notation}</td>
       <td>
-        <button onclick="deleteRestaurant(${restaurant.id})" class="btn btn-danger">Delete</button>
         <button onclick="editRestaurant(${restaurant.id})" class="btn btn-primary">Edit</button>
       </td>
     `;
@@ -230,24 +229,6 @@ async function editRestaurant(id) {
   } catch (error) {
     console.error("Error fetching restaurant:", error.message);
     alert("Error loading restaurant data. Please try again.");
-  }
-}
-
-// Delete a restaurant
-async function deleteRestaurant(id) {
-  if (!confirm("Are you sure you want to delete this restaurant?")) return;
-
-    try {
-      const response = await fetch(`${apiURL}/${id}`, { method: "DELETE" });
-      if (!response.ok) {
-        console.error(`Error deleting restaurant: ${response.statusText}`);
-        alert("Error deleting restaurant. Please try again.");
-        return; // If the response is not okay, we stop the function
-      }  
-    fetchRestaurantsAdmin();
-  } catch (error) {
-    console.error("Error deleting restaurant:", error.message);
-    alert("Error deleting restaurant. Please try again.");
   }
 }
 
