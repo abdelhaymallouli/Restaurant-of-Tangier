@@ -71,12 +71,12 @@ RESTAURANT-OF-TANGIER
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/restaurant-of-tangier.git
+   git clone https://github.com/abdelhaymallouli/Restaurant-of-Tangier.git
    ```
 
 2. **Navigate to the project directory**:
    ```bash
-   cd restaurant-of-tangier
+   cd Restaurant-of-Tangier
    ```
 
 3. **Install dependencies**:
