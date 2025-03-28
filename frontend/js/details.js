@@ -60,7 +60,7 @@ function renderRestaurantDetails(restaurant) {
 
 async function fetchRestaurants() {
   try {
-    const response = await fetch("http://localhost:3000/restaurants");
+    const response = await fetch("/api/restaurants");
     const data = await response.json();
       renderRestaurants(data);
   } catch (error) {

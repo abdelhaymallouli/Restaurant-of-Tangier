@@ -1,7 +1,12 @@
 async function fetchRestaurants(searchTerm = "") {
   try {
     const response = await fetch("/api/restaurants");
+    if (!response.ok) {
+      console.error("API Error:", response.status, response.statusText);
+      return;
+    }
     const data = await response.json();
+    console.log("API Response:", data); // Debug logging
 
     // Filter data if a searchTerm is provided
     if (searchTerm) {
@@ -23,10 +28,7 @@ function renderRestaurants(restaurants) {
   const container = document.getElementById("restaurantList");
   container.innerHTML = "";
 
-  // Limit the number of restaurants displayed to 6
-  const limitedRestaurants = restaurants.slice(0, 6);
-
-  limitedRestaurants.forEach(restaurant => {
+  restaurants.forEach(restaurant => {
     const div = document.createElement("div");
     div.classList.add("restaurant-card");
     div.innerHTML = `
