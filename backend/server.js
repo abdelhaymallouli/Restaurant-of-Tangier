@@ -7,8 +7,14 @@ const app = express();
 
 // Middleware pour gérer le CORS
 app.use(cors({
-    origin: 'https://restaurant-of-tangier.vercel.app'
+    origin: [
+      'https://restaurant-of-tangier.vercel.app',
+      'https://restaurant-of-tangier-*.vercel.app'
+    ],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
   }));
+  
   
 
 // Middlewares
