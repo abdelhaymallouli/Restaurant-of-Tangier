@@ -13,28 +13,31 @@
       "use": "@vercel/static"
     }
   ],
-  
   "routes": [
-    { 
-      "src": "/api/.*", 
+    {
+      "src": "/api/(.*)",
       "dest": "backend/server.js",
       "headers": {
         "Content-Type": "application/json"
       }
     },
     {
-      "src": "/",
-      "dest": "frontend/index.html",
+      "src": "/(.*\\.css)",
+      "dest": "frontend/$1",
       "headers": {
-        "Content-Type": "text/html"
+        "Content-Type": "text/css"
       }
     },
     {
-      "src": "/(.*\\.(html|css|js|png|jpg|svg))",
+      "src": "/(.*\\.js)",
       "dest": "frontend/$1",
       "headers": {
-        "Content-Type": "text/html"
+        "Content-Type": "application/javascript"
       }
+    },
+    {
+      "src": "/(.*\\.(png|jpg|svg|ico))",
+      "dest": "frontend/$1"
     },
     {
       "src": "/(.*)",
