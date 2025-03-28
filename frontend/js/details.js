@@ -3,7 +3,7 @@ const restaurantId = urlParams.get("id");
 
 async function fetchRestaurantDetails() {
   try {
-    const response = await fetch("/restaurants");
+    const response = await fetch("/api/restaurants");
     const data = await response.json();
 
     const restaurant = data.find(r => r.id === parseInt(restaurantId));

@@ -1,4 +1,4 @@
-const apiURL = "/restaurants"; // Relative path
+const apiURL = "/api/restaurants"; // Relative path
 
 // Fetch and display all restaurants
 async function fetchRestaurantsAdmin() {

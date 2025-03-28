@@ -1,8 +1,6 @@
 async function fetchRestaurants(searchTerm = "") {
   try {
-      const response = await fetch("restaurants");
-      const text = await response.text();
-      console.log("Raw response:", text);
+      const response = await fetch("/api/restaurants");
       const data = await response.json();
       
       // First filter the restaurants if there's a search term

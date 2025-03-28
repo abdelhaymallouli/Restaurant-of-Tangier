@@ -1,6 +1,6 @@
 async function fetchRestaurants(searchTerm = "") {
   try {
-    const response = await fetch("/restaurants");
+    const response = await fetch("/api/restaurants");
     const data = await response.json();
 
     // Filter data if a searchTerm is provided
