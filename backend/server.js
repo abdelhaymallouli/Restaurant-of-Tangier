@@ -127,4 +127,15 @@ const PORT = 3000;
 
 
 
+// Add debug route at the top
+app.get('/api/debug', (req, res) => {
+  res.json({
+    status: 'working',
+    cwd: process.cwd(),
+    files: fs.readdirSync(process.cwd())
+  });
+});
+
+// Existing routes...
+
 module.exports = app;
