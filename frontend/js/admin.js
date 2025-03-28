@@ -1,4 +1,4 @@
-const apiURL = "http://localhost:3000/restaurants";
+const apiURL = "https://restaurant-of-tangier.vercel.app/restaurants";
 
 // Fetch and display all restaurants
 async function fetchRestaurantsAdmin() {

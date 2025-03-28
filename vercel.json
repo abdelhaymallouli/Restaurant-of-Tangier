@@ -8,6 +8,14 @@
   ],
   "routes": [
     {
+      "src": "/restaurants",
+      "dest": "backend/server.js"
+    },
+    {
+      "src": "/restaurants/(.*)",
+      "dest": "backend/server.js"
+    },
+    {
       "src": "/(.*)",
       "dest": "backend/server.js"
     }

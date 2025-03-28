@@ -1,6 +1,6 @@
 async function fetchRestaurants(searchTerm = "") {
   try {
-      const response = await fetch("http://localhost:3000/restaurants");
+      const response = await fetch("https://restaurant-of-tangier.vercel.app/restaurants");
       const data = await response.json();
       
       // First filter the restaurants if there's a search term
