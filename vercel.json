@@ -5,7 +5,7 @@
       "src": "backend/server.js",
       "use": "@vercel/node",
       "config": {
-        "includeFiles": ["backend/data/restaurants.json"]
+        "includeFiles": ["backend/data/**"]
       }
     },
     {
@@ -15,23 +15,30 @@
   ],
   
   "routes": [
-    {
-      "src": "/api/(.*)",
+    { 
+      "src": "/api/.*", 
       "dest": "backend/server.js",
       "headers": {
         "Content-Type": "application/json"
       }
     },
     {
-      "src": "/(.*\\.css)",
-      "dest": "frontend/css/$1",
+      "src": "/",
+      "dest": "frontend/index.html",
       "headers": {
-        "Content-Type": "text/css"
+        "Content-Type": "text/html"
       }
     },
-    { 
-      "src": "/(.*)", 
+    {
+      "src": "/(.*\\.(html|css|js|png|jpg|svg))",
       "dest": "frontend/$1",
+      "headers": {
+        "Content-Type": "text/html"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "frontend/index.html",
       "headers": {
         "Content-Type": "text/html"
       }
