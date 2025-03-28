@@ -27,10 +27,6 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '../frontend')));
 
 
-// Handle all other routes by serving frontend
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/index.html'));
-});
   
 // Fonction pour lire les données des restaurants
 const readRestaurantsData = () => {
