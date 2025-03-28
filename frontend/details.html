@@ -1,97 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Explore the best restaurants in Tangier with detailed guides and reviews."
-    />
-    <title>Restaurant Details</title>
-    <link
-      rel="icon"
-      href="./img/tan-removebg-preview.png"
-      type="image/x-icon"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-  </head>
-  <body>
-    <header class="details-header" role="banner">
-      <div class="logo">
-        <a href="/frontend/">
-          <img src="./img/tan__1_-removebg-preview.png" alt="Restaurant Logo" />
-        </a>
-      </div>
-      <nav>
-        <a href="/frontend/">Home</a>
-        <a href="/frontend/restaurants.html">Restaurants</a>
-        <a href="/frontend/#city-tour">City Tour</a>
-        <a href="#footer">Contact us</a>
-      </nav>
-
-    </header>
-
-
-    <main id="restaurant-info" class="info-container">
-      <!-- Restaurant details will be dynamically rendered here -->
-    </main>
-
-    <section class="other_restaurant" >
-      <h3 id="h3-title">Check Other</h1>
-      <h1 id="h1-title">RESTAURANT</h1>
-      <div id="other_restaurant">
-        <!-- 3 restaurant card will be dynamically rendered here -->
-      </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Restaurant Management</title>
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+  <header class="admin-header">
+    <a href="/"><img src="/img/tan__1_-removebg-preview.png" alt=""></a>
+    <nav class="admin-nav">
+      <ul>
+        <li><a href="#addRestaurant">Add Restaurant</a></li>
+        <li><a href="#restaurantList">Restaurant List</a></li>
+      </ul>
+    </nav>
+    <div class="search-container">
+      <input
+        type="text"
+        id="searchQuery"
+        placeholder="Search "
+        class="search-input"
+      >
+      <button id="searchButton" class="btn btn-primary">Search</button>
+      <button id="clearSearchButton" class="btn btn-secondary">Clear</button>
+    </div>
+  </header>
+  
+  <main>
+    <!-- Add Restaurant Section -->
+    <section id="addRestaurant">
+      <h2>Add New Restaurant :</h2>
+      <form id="addForm">
+        <input type="text" id="addNom" placeholder="Restaurant Name" required>
+        <input type="text" id="addSpecialite" placeholder="Speciality" required>
+        <input type="text" id="addAdresse" placeholder="Address" required>
+        <input type="number" id="addNotation" placeholder="Rating (1-5)" step="0.1" min="1" max="5" required>
+        <input type="text" id="addPhone" placeholder="Phone Number" required>
+        <input type="email" id="addEmail" placeholder="Email Address" required>
+        <input type="url" id="addMap" placeholder="Google Maps URL" required>
+        <input type="url" id="addImage" placeholder="Image URL" required>
+        <button type="submit" class="btn btn-success">Add Restaurant</button>
+      </form>
     </section>
-    <footer id="footer" class="site-footer">
-      <div class="footer-content">
-        <div class="footer-section about">
-          <img src="./img/tan__1_-removebg-preview.png" alt="" />
-          <p>
-            Travel beyond your <br />
-            imagination, with our <br />
-            Travel Agency!
-          </p>
-        </div>
-        <div class="footer-section contact">
-          <h3>Contact Us</h3>
-          <p><i class="fas fa-map-marker-alt"></i> Tangier, Morocco</p>
-          <p><i class="fas fa-envelope"></i> info@tangierrestaurants.com</p>
-          <p><i class="fas fa-phone"></i> +212 5XX XX XX XX</p>
-        </div>
-        <div class="footer-section social">
-          <h3>Follow Us</h3>
-          <div class="social-icons">
-            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>
-          &copy; <span id="year"></span> Tangier Restaurant Guide. All Rights
-          Reserved.
-        </p>
-        <script>
-          document.getElementById("year").textContent =
-            new Date().getFullYear();
-        </script>
-      </div>
-    </footer>
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-    <script src="js/details.js"></script>
-  </body>
+
+    <!-- Restaurant List Section -->
+    <section id="restaurantList">
+      <h2>Restaurant List</h2>
+      <div id="restaurantContainer"></div>
+    </section>
+  </main>
+  
+  <script src="/js/admin.js"></script>
+</body>
 </html>
