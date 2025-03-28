@@ -26,10 +26,6 @@ app.use(express.json());
 // Add static file serving for frontend
 app.use(express.static(path.join(__dirname, '../frontend')));
 
-// Handle 404 for API routes
-app.use('/restaurants*', (req, res) => {
-  res.status(404).json({ error: "API endpoint not found" });
-});
 
 // Handle all other routes by serving frontend
 app.get('*', (req, res) => {
