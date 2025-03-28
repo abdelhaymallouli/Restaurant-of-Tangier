@@ -40,6 +40,27 @@
       "dest": "frontend/$1"
     },
     {
+      "src": "/restaurants.html",
+      "dest": "frontend/restaurants.html",
+      "headers": {
+        "Content-Type": "text/html"
+      }
+    },
+    {
+      "src": "/details.html",
+      "dest": "frontend/details.html",
+      "headers": {
+        "Content-Type": "text/html"
+      }
+    },
+    {
+      "src": "/admin.html", 
+      "dest": "frontend/admin.html",
+      "headers": {
+        "Content-Type": "text/html"
+      }
+    },
+    {
       "src": "/(.*)",
       "dest": "frontend/index.html",
       "headers": {
