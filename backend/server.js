@@ -7,7 +7,7 @@ const app = express();
 
 // Middleware pour gérer le CORS
 app.use(cors({
-    origin: 'https://restaurant-of-tangier.vercel.app/'
+    origin: 'https://restaurant-of-tangier.vercel.app'
   }));
   
 
@@ -17,10 +17,18 @@ app.use(bodyParser.json());
 // Middleware pour analyser les requêtes en JSON
 app.use(express.json());
 
-// Add this near the top of your file
-app.get('/', (req, res) => {
-    res.send('Welcome to the Restaurant of Tangier API');
-  });
+// Add static file serving for frontend
+app.use(express.static(path.join(__dirname, '../frontend')));
+
+// Handle 404 for API routes
+app.use('/restaurants*', (req, res) => {
+  res.status(404).json({ error: "API endpoint not found" });
+});
+
+// Handle all other routes by serving frontend
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/index.html'));
+});
   
 // Fonction pour lire les données des restaurants
 const readRestaurantsData = () => {

@@ -4,20 +4,31 @@
     {
       "src": "backend/server.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "frontend/*",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/restaurants",
+      "src": "/restaurants(.*)",
       "dest": "backend/server.js"
     },
     {
-      "src": "/restaurants/(.*)",
-      "dest": "backend/server.js"
+      "src": "/img/(.*)",
+      "dest": "frontend/img/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "backend/server.js"
+      "dest": "frontend/$1"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/:path*",
+      "destination": "/index.html",
+      "statusCode": 200
     }
   ]
 }

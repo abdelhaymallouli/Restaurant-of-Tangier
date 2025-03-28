@@ -1,4 +1,4 @@
-const apiURL = "https://restaurant-of-tangier.vercel.app/restaurants";
+const apiURL = "/restaurants"; // Relative path
 
 // Fetch and display all restaurants
 async function fetchRestaurantsAdmin() {

@@ -3,7 +3,7 @@ const restaurantId = urlParams.get("id");
 
 async function fetchRestaurantDetails() {
   try {
-    const response = await fetch("https://restaurant-of-tangier.vercel.app/restaurants");
+    const response = await fetch("/restaurants");
     const data = await response.json();
 
     const restaurant = data.find(r => r.id === parseInt(restaurantId));
