@@ -32,7 +32,7 @@ app.get('*', (req, res) => {
   
 // Fonction pour lire les données des restaurants
 const readRestaurantsData = () => {
-    const dataPath = path.join(__dirname, '..', 'data', 'restaurants.json');
+    const dataPath = path.join(process.cwd(), 'data', 'restaurants.json');
     const data = fs.readFileSync(dataPath);
     return JSON.parse(data);
 };
@@ -72,7 +72,7 @@ app.post('/restaurants', (req, res) => {
     };
     restaurants.push(newRestaurant);
 
-    const dataPath = path.join(__dirname, 'data', 'restaurants.json');
+    const dataPath = path.join(process.cwd(), 'data', 'restaurants.json');
     fs.writeFileSync(dataPath, JSON.stringify(restaurants, null, 2)); // Écriture dans le fichier JSON
     res.status(201).json(newRestaurant);
 });
@@ -97,7 +97,7 @@ app.put('/restaurants/:id', (req, res) => {
     if (notation) restaurant.notation = notation;
 
     // Save the updated list back to the file
-    const dataPath = path.join(__dirname, 'data', 'restaurants.json');
+    const dataPath = path.join(process.cwd(), 'data', 'restaurants.json');
     fs.writeFileSync(dataPath, JSON.stringify(restaurants, null, 2)); // Write back to JSON file
     res.json(restaurant); // Return the updated restaurant
 });
@@ -111,7 +111,7 @@ app.delete('/restaurants/:id', (req, res) => {
 
     restaurants.splice(index, 1);
 
-    const dataPath = path.join(__dirname, 'data', 'restaurants.json');
+    const dataPath = path.join(process.cwd(), 'data', 'restaurants.json');
     fs.writeFileSync(dataPath, JSON.stringify(restaurants, null, 2)); // Sauvegarde après suppression
     res.status(204).send(); // Réponse sans contenu
 });
