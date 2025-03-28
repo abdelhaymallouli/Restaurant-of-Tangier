@@ -16,10 +16,17 @@
   
   "routes": [
     {
-      "src": "/api/.*", 
+      "src": "/api/(.*)",
       "dest": "backend/server.js",
-      "headers": { 
+      "headers": {
         "Content-Type": "application/json"
+      }
+    },
+    {
+      "src": "/(.*\\.css)",
+      "dest": "frontend/css/$1",
+      "headers": {
+        "Content-Type": "text/css"
       }
     },
     { 

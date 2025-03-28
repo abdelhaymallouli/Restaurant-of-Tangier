@@ -36,13 +36,13 @@ const readRestaurantsData = () => {
 };
 
 // GET pour récupérer tous les restaurants
-app.get('/restaurants', (req, res) => {
+app.get('/api/restaurants', (req, res) => {
     const restaurants = readRestaurantsData();
     res.json(restaurants);
 });
 
 // GET pour récupérer un seul restaurant par son ID
-app.get('/restaurants/:id', (req, res) => {
+app.get('/api/restaurants/:id', (req, res) => {
     const restaurants = readRestaurantsData();
     const restaurant = restaurants.find(r => r.id === parseInt(req.params.id));
     if (!restaurant) return res.status(404).json({ message: 'Restaurant not found' });
@@ -50,7 +50,7 @@ app.get('/restaurants/:id', (req, res) => {
 });
 
 // POST pour ajouter un nouveau restaurant
-app.post('/restaurants', (req, res) => {
+app.post('/api/restaurants', (req, res) => {
     const { nom, specialite, adresse, notation, Phone, Email, map, image} = req.body;
     if (!nom || !specialite || !adresse, !notation, !Phone, !Email, !map, !image) {
         return res.status(400).json({ message: "Name and address are required" });
@@ -77,7 +77,7 @@ app.post('/restaurants', (req, res) => {
 
 
 
-app.put('/restaurants/:id', (req, res) => {
+app.put('/api/restaurants/:id', (req, res) => {
     const restaurants = readRestaurantsData();
     const restaurant = restaurants.find(r => r.id === parseInt(req.params.id));
     if (!restaurant) return res.status(404).json({ message: 'Restaurant not found' });
@@ -102,7 +102,7 @@ app.put('/restaurants/:id', (req, res) => {
 
 
 // DELETE pour supprimer un restaurant par son ID
-app.delete('/restaurants/:id', (req, res) => {
+app.delete('/api/restaurants/:id', (req, res) => {
     const restaurants = readRestaurantsData();
     const index = restaurants.findIndex(r => r.id === parseInt(req.params.id));
     if (index === -1) return res.status(404).json({ message: 'Restaurant not found' });
