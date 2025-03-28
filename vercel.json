@@ -3,7 +3,10 @@
   "builds": [
     {
       "src": "backend/server.js",
-      "use": "@vercel/node"
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": "backend/data/**"
+      }
     },
     {
       "src": "frontend/**",
@@ -12,17 +15,12 @@
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
+      "src": "/restaurants(.*)",
       "dest": "backend/server.js"
     },
     {
       "src": "/(.*)",
       "dest": "frontend/$1"
     }
-  ],
-  "functions": {
-    "backend/server.js": {
-      "includeFiles": "data/**"
-    }
-  }
+  ]
 }
