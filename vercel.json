@@ -5,7 +5,7 @@
       "src": "backend/server.js",
       "use": "@vercel/node",
       "config": {
-        "includeFiles": ["backend/data/**"]
+        "includeFiles": ["backend/data/restaurants.json"]
       }
     },
     {

@@ -30,7 +30,7 @@ app.use(express.static(path.join(__dirname, '../frontend')));
   
 // Fonction pour lire les données des restaurants
 const readRestaurantsData = () => {
-    const dataPath = path.join(process.cwd(), 'data', 'restaurants.json');
+    const dataPath = path.join(__dirname, 'data', 'restaurants.json');
     const data = fs.readFileSync(dataPath);
     return JSON.parse(data);
 };
