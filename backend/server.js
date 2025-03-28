@@ -6,7 +6,10 @@ const bodyParser = require("body-parser");
 const app = express();
 
 // Middleware pour gérer le CORS
-app.use(cors());
+app.use(cors({
+    origin: 'https://restaurant-of-tangier.vercel.app/'
+  }));
+  
 
 // Middlewares
 app.use(bodyParser.json());
@@ -14,9 +17,14 @@ app.use(bodyParser.json());
 // Middleware pour analyser les requêtes en JSON
 app.use(express.json());
 
+// Add this near the top of your file
+app.get('/', (req, res) => {
+    res.send('Welcome to the Restaurant of Tangier API');
+  });
+  
 // Fonction pour lire les données des restaurants
 const readRestaurantsData = () => {
-    const dataPath = path.join(__dirname, 'data', 'restaurants.json');
+    const dataPath = path.join(__dirname, '..', 'data', 'restaurants.json');
     const data = fs.readFileSync(dataPath);
     return JSON.parse(data);
 };
@@ -102,9 +110,11 @@ app.delete('/restaurants/:id', (req, res) => {
 
 // Lancement du serveur
 const PORT = 3000;
-app.listen(PORT, () => {
-    console.log(`Serveur en cours d'exécution sur http://localhost:${PORT}`);
-});
+
+// app.listen(PORT, () => {
+//     console.log(`Serveur en cours d'exécution sur http://localhost:${PORT}`);
+// });
+
 
 
 module.exports = app;
