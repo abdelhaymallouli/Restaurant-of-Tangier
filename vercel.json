@@ -6,29 +6,18 @@
       "use": "@vercel/node"
     },
     {
-      "src": "frontend/*",
+      "src": "frontend/**",
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/restaurants(.*)",
+      "src": "/api/(.*)",
       "dest": "backend/server.js"
-    },
-    {
-      "src": "/img/(.*)",
-      "dest": "frontend/img/$1"
     },
     {
       "src": "/(.*)",
       "dest": "frontend/$1"
-    }
-  ],
-  "redirects": [
-    {
-      "source": "/:path*",
-      "destination": "/index.html",
-      "statusCode": 200
     }
   ]
 }
